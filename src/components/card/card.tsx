@@ -1,4 +1,24 @@
 import "./style.css";
-export const Card = () => {
-  return <div className="id-card">Card</div>;
+
+type CardProps = {
+  input: {
+    name: string;
+    startDate: string;
+    course: string;
+  };
+};
+export const Card = ({ input }: CardProps) => {
+  const validUntil = () => {
+    const splitDate = input.startDate.split("-");
+    splitDate[0] = `${+splitDate[0] + 2}`;
+    return splitDate.join("-");
+  };
+
+  return (
+    <div className="id-card">
+      {input.name}
+      {validUntil()}
+      {`${input.course}-${input.startDate}`}
+    </div>
+  );
 };

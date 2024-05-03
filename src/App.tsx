@@ -1,12 +1,11 @@
 import "./App.css";
-import { Card, Form } from "./components";
+import { IdCardGenerator } from "./components";
 
 function App() {
   return (
     <div className="body">
       <div className="container">
-        <Form />
-        <Card />
+        <IdCardGenerator />
       </div>
     </div>
   );
