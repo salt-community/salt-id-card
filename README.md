@@ -1,4 +1,4 @@
-Process of getting benefits from github:
+### Process of getting benefits from github:
 1. Entering page https://education.github.com/pack.
 2. Click on *Sign up for Student Developer Pack*.
 3. Scroll down to the section Application where you need to enter the name of the school (choose from the list) our case: Applied Technology - SALT.

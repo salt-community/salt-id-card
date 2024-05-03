@@ -1,4 +1,4 @@
-import "./style.css";
+import "./cta-button.css";
 
 type Props = {
   onClick: () => void;

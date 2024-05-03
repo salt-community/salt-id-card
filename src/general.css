@@ -1,0 +1,6 @@
+:root{
+    --background-card-section: #403d39;
+    --background-card: var(--white);
+    --main-color: #FE9087;
+    --white: #fff;
+}

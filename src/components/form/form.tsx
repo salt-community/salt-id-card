@@ -1,5 +1,5 @@
 import { ChangeEventHandler } from "react";
-import "./Style.css";
+import "./form.css";
 
 type FormProps = {
   onChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
