@@ -17,8 +17,8 @@ export const Card = ({ input }: CardProps) => {
   return (
     <div className="id-card">
       {input.name}
-      {validUntil()}
-      {`${input.course}-${input.startDate}`}
+      {input.startDate && validUntil()}
+      {input.startDate && `${input.course}-${input.startDate}`}
     </div>
   );
 };

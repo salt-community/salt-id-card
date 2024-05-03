@@ -10,8 +10,10 @@ export const IdCardGenerator = () => {
     course: "",
   });
 
-  const inputForm = (el: any) => {
-    const { name, value } = el.target;
+  const inputForm = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
     setInput({
       ...input,
       [name]: value,
@@ -20,7 +22,7 @@ export const IdCardGenerator = () => {
 
   return (
     <>
-      <Form onChange={inputForm} />
+      <Form onChange={(e) => inputForm(e)} />
       <CtaButton
         onClick={function (): void {
           throw new Error("Function not implemented.");
