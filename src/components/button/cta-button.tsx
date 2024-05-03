@@ -1,5 +1,14 @@
-import React from "react";
+import "./style.css";
 
-export const CtaButton = () => {
-  return <div>cta-button</div>;
+type Props = {
+  onClick: () => void;
+  children: React.ReactNode;
+};
+
+export const CtaButton = ({ onClick, children }: Props) => {
+  return (
+    <div className="cta" onClick={onClick}>
+      {children}
+    </div>
+  );
 };
