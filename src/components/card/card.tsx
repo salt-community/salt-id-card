@@ -1,7 +1,6 @@
 import "./card.css";
-import avatar from "../../assets/avatar.png";
 import { v4 as uuidv4 } from "uuid";
-import qrcode from "../../assets/qrcode.png"
+import qrcode from "../../assets/qrcode.png";
 import { useEffect, useState } from "react";
 
 type CardProps = {
@@ -9,6 +8,7 @@ type CardProps = {
     name: string;
     startDate: string;
     course: string;
+    photo: string;
   };
 };
 export const Card = ({ input }: CardProps) => {
@@ -35,7 +35,11 @@ export const Card = ({ input }: CardProps) => {
           <span className="card-student__status">student</span>
         </section>
         <section className="card-section__body">
-          <img src={avatar} alt="user picture" className="card-user__img" />
+          <img
+            src={input.photo}
+            alt="user picture"
+            className="card-user__img"
+          />
           <dl className="card-info__wrapper">
             <dt>Name:</dt>
             <dd>{input.name}</dd>
@@ -50,7 +54,7 @@ export const Card = ({ input }: CardProps) => {
             <dt>Valid until:</dt>
             <dd>{input.startDate && validUntil()}</dd>
           </dl>
-        <img src={qrcode} alt="QR code" className="card-qrcode"/>
+          <img src={qrcode} alt="QR code" className="card-qrcode" />
         </section>
       </div>
     </div>
