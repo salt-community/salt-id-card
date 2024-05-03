@@ -1,4 +1,7 @@
-### Process of getting benefits from github:
+## About
+App created to make process of applying by students for github benefits easier and faster. 
+
+### Process of getting benefits from github (with contract):
 1. Entering page https://education.github.com/pack.
 2. Click on *Sign up for Student Developer Pack*.
 3. Scroll down to the section Application where you need to enter the name of the school (choose from the list) our case: Applied Technology - SALT.
