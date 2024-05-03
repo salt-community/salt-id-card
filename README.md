@@ -10,6 +10,6 @@
 [Simple view of the app](https://excalidraw.com/#json=bTwsnrCGFfx5t6UX28L74,IhnCz-hZiStd2vf0rz3djw)
 
 ### Demo
-[DEMO](salt-id-card.vercel.app/)
+[DEMO](https://salt-id-card.vercel.app/)
 
 
