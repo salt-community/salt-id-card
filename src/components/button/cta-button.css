@@ -1,3 +1,8 @@
 .cta {
-  color: #000;
+  color: #fff;
+  padding: 4px 8px;
+  background-color: var(--main-color);
+  max-width: fit-content;
+  align-self: flex-end;
+  border-radius: 5px;
 }

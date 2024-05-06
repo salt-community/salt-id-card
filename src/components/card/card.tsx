@@ -29,10 +29,7 @@ export const Card = ({ input }: CardProps) => {
       <section className="card-section__head">
         <img src={saltLogo} alt="salt logo" className="card-school__img" />
         <span className="card-school__name">Applied Technology STHLM AB</span>
-        <span className="card-student__status">
-          {" "}
-          <div>student</div>
-        </span>
+        <span className="card-student__status">student</span>
       </section>
       <section className="card-section__body">
         <div style={{ maxHeight: "100px", maxWidth: "100px" }}>
