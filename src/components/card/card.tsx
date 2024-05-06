@@ -4,6 +4,7 @@ import qrcode from "../../assets/qrcode.png";
 import { useEffect, useState } from "react";
 
 type CardProps = {
+  referece: React.MutableRefObject<HTMLDivElement | undefined>;
   input: {
     name: string;
     startDate: string;
@@ -11,7 +12,7 @@ type CardProps = {
     photo: string;
   };
 };
-export const Card = ({ input }: CardProps) => {
+export const Card = ({ input, referece }: CardProps) => {
   const [id, setId] = useState("");
   const validUntil = () => {
     const splitDate = input.startDate.split("-");
@@ -23,7 +24,7 @@ export const Card = ({ input }: CardProps) => {
   }, []);
 
   return (
-    <div className="card-container">
+    <div className="card-container" ref={referece}>
       <div className="card-wrapper">
         <section className="card-section__head">
           <img
