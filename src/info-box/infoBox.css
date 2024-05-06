@@ -1,0 +1,6 @@
+.info-box{
+    display: none;
+}
+.info-box.visible{
+    display: block;
+}

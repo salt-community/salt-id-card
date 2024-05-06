@@ -4,12 +4,13 @@ type Props = {
   onClick: () => void;
   children: React.ReactNode;
   disabled: boolean
+  className: string
 };
 
-export const CtaButton = ({ onClick, children, disabled  }: Props) => {
+export const CtaButton = ({ onClick, children, disabled, className }: Props) => {
 
   return (
-    <button className="cta" onClick={onClick} disabled={disabled}>
+    <button className={className} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

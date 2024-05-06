@@ -4,6 +4,8 @@ import { Card } from "../card";
 import { Form } from "../form";
 import html2canvas from "html2canvas";
 import "./idCardGenerator.css";
+import 'react-tooltip/dist/react-tooltip.css'
+import { InfoBox } from "../../info-box/infoBox";
 
 export const IdCardGenerator = () => {
   const [input, setInput] = useState({
@@ -53,8 +55,7 @@ export const IdCardGenerator = () => {
   };
 
   const isFormValid = () => {
-    console.log(input.name, input.course, input.startDate);
-    return input.name === "" || input.startDate === "";
+    return input.name === "" || input.startDate === "" || input.photo === "https://placehold.co/140x140";
   };
   return (
     <>
@@ -62,8 +63,13 @@ export const IdCardGenerator = () => {
         <Form
           onChange={(e) => inputForm(e)}
           handlePhoto={(e) => handlePhoto(e)}
-        />
-        <CtaButton onClick={handlePrint} disabled={isFormValid()}>
+        />  
+        <InfoBox content="Option to create card will be available after filling form." visible={isFormValid()}/>
+        <CtaButton
+          onClick={handlePrint}
+          disabled={isFormValid()}
+          className="cta"
+        >
           Create card
         </CtaButton>
       </div>
