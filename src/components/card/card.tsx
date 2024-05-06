@@ -1,10 +1,10 @@
 import "./card.css";
 import { v4 as uuidv4 } from "uuid";
 import qrcode from "../../assets/qrcode.png";
+import saltLogo from "../../assets/salt-logo-dark.svg";
 import { useEffect, useState } from "react";
 
 type CardProps = {
-  referece: React.MutableRefObject<HTMLDivElement | undefined>;
   input: {
     name: string;
     startDate: string;
@@ -12,7 +12,7 @@ type CardProps = {
     photo: string;
   };
 };
-export const Card = ({ input, referece }: CardProps) => {
+export const Card = ({ input }: CardProps) => {
   const [id, setId] = useState("");
   const validUntil = () => {
     const splitDate = input.startDate.split("-");
@@ -24,40 +24,41 @@ export const Card = ({ input, referece }: CardProps) => {
   }, []);
 
   return (
-    <div className="card-container" ref={referece}>
-      <div className="card-wrapper">
-        <section className="card-section__head">
-          <img
-            src="https://salt.dev/wp-content/uploads/2024/02/salt-logo-dark.svg"
-            alt="salt logo"
-            className="card-school__img"
-          />
-          <span className="card-school__name">Applied Technology STHLM AB</span>
-          <span className="card-student__status">student</span>
-        </section>
-        <section className="card-section__body">
+    // <div className="card-container">
+    <div className="card-wrapper">
+      <section className="card-section__head">
+        <img src={saltLogo} alt="salt logo" className="card-school__img" />
+        <span className="card-school__name">Applied Technology STHLM AB</span>
+        <span className="card-student__status">
+          {" "}
+          <div>student</div>
+        </span>
+      </section>
+      <section className="card-section__body">
+        <div style={{ maxHeight: "100px", maxWidth: "100px" }}>
           <img
             src={input.photo}
             alt="user picture"
             className="card-user__img"
           />
-          <dl className="card-info__wrapper">
-            <dt>Name:</dt>
-            <dd>{input.name}</dd>
-            <dt>ID#: </dt>
-            <dd>{id}</dd>
-            <dt>Course:</dt>
-            <dd>{input.startDate && `${input.course}-${input.startDate}`}</dd>
-          </dl>
-        </section>
-        <section className="card-section__footer">
-          <dl className="card-validity">
-            <dt>Valid until:</dt>
-            <dd>{input.startDate && validUntil()}</dd>
-          </dl>
-          <img src={qrcode} alt="QR code" className="card-qrcode" />
-        </section>
-      </div>
+        </div>
+        <dl className="card-info__wrapper">
+          <dt>Name:</dt>
+          <dd>{input.name}</dd>
+          <dt>ID#: </dt>
+          <dd>{id}</dd>
+          <dt>Course:</dt>
+          <dd>{input.startDate && `${input.course}-${input.startDate}`}</dd>
+        </dl>
+      </section>
+      <section className="card-section__footer">
+        <dl className="card-validity">
+          <dt>Valid until:</dt>
+          <dd>{input.startDate && validUntil()}</dd>
+        </dl>
+        <img src={qrcode} alt="QR code" className="card-qrcode" />
+      </section>
     </div>
+    // </div>
   );
 };

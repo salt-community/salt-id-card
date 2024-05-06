@@ -12,7 +12,7 @@ export const IdCardGenerator = () => {
     course: "",
     photo: avatar,
   });
-  const printRef = useRef<HTMLDivElement>();
+  const printRef = useRef<HTMLInputElement>(null);
 
   const inputForm = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -33,21 +33,17 @@ export const IdCardGenerator = () => {
 
   const handlePrint = async () => {
     const element = printRef.current;
-    const canvas = await html2canvas(element);
+    const canvas = await html2canvas(element!, { scale: 4 });
 
-    const data = canvas.toDataURL("image/jpg");
+    const data = canvas.toDataURL("image/png");
     const link = document.createElement("a");
 
-    if (typeof link.download === "string") {
-      link.href = data;
-      link.download = "image.jpg";
+    link.href = data;
+    link.download = `${input.name}.png`;
 
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } else {
-      window.open(data);
-    }
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -57,7 +53,9 @@ export const IdCardGenerator = () => {
         handlePhoto={(e) => handlePhoto(e)}
       />
       <CtaButton onClick={handlePrint}>Create card</CtaButton>
-      <Card input={input} ref={printRef} />
+      <div ref={printRef}>
+        <Card input={input} />
+      </div>
     </>
   );
 };
