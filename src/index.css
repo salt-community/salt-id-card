@@ -1,4 +1,4 @@
-@import './general.css';
+@import "./general.css";
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -22,7 +22,7 @@ picture,
 video,
 canvas,
 svg {
-  display: block;
+  display: inline-block;
   max-width: 100%;
 }
 input,

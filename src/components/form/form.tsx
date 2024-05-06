@@ -3,8 +3,9 @@ import "./form.css";
 
 type FormProps = {
   onChange: ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
+  handlePhoto: ChangeEventHandler<HTMLInputElement>;
 };
-export const Form = ({ onChange }: FormProps) => {
+export const Form = ({ onChange, handlePhoto }: FormProps) => {
   return (
     <form className="form">
       <label>Name:</label>
@@ -17,6 +18,8 @@ export const Form = ({ onChange }: FormProps) => {
         <option value="dnfs-sthlm">DNFS Stockholm</option>
         <option value="jsfs-sthlm">JFSF Stockholm</option>
       </select>
+      <label>Upload photo:</label>
+      <input type="file" name="photo" onChange={(e) => handlePhoto(e)}></input>
     </form>
   );
 };
