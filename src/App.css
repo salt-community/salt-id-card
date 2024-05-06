@@ -1,17 +1,16 @@
-.body {
-  background-color: #252422;
+.root{
+  background-color: var(--dark-gray);
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
 }
-
 .container {
   display: flex;
   flex-direction: row;
   border-radius: 20px;
-  width: 1536px;
+  width: 80%;
+  margin: 0 auto;
   height: 70vh;
   overflow: hidden;
 }

@@ -3,12 +3,14 @@ import "./cta-button.css";
 type Props = {
   onClick: () => void;
   children: React.ReactNode;
+  disabled: boolean
 };
 
-export const CtaButton = ({ onClick, children }: Props) => {
+export const CtaButton = ({ onClick, children, disabled  }: Props) => {
+
   return (
-    <div className="cta" onClick={onClick}>
+    <button className="cta" onClick={onClick} disabled={disabled}>
       {children}
-    </div>
+    </button>
   );
 };

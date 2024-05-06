@@ -8,17 +8,17 @@ type FormProps = {
 export const Form = ({ onChange, handlePhoto }: FormProps) => {
   return (
     <form className="form">
-      <label>Name:</label>
+      <label htmlFor="name">Name:</label>
       <input type="text" name="name" onChange={onChange}></input>
-      <label>Start date:</label>
+      <label htmlFor="startDate">Start date:</label>
       <input type="date" name="startDate" onChange={onChange}></input>
-      <label>Course:</label>
+      <label htmlFor="course">Course:</label>
       <select name="course" onChange={onChange}>
         <option value="jfs-sthlm">JFS Stockholm</option>
         <option value="dnfs-sthlm">DNFS Stockholm</option>
         <option value="jsfs-sthlm">JFSF Stockholm</option>
       </select>
-      <label>Upload photo:</label>
+      <label htmlFor="photo">Upload photo:</label>
       <input type="file" name="photo" onChange={(e) => handlePhoto(e)}></input>
     </form>
   );

@@ -1,9 +1,18 @@
 .form-container {
-  background-color: #fffcf2;
+  background-color: var(--beige);
   width: 40%;
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
   gap: 10px;
+}
+
+.card-container {
+  background-color: var(--medium-gray);
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

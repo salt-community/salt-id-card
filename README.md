@@ -13,6 +13,6 @@ App created to make process of applying by students for github benefits easier a
 [Simple view of the app](https://excalidraw.com/#json=bTwsnrCGFfx5t6UX28L74,IhnCz-hZiStd2vf0rz3djw)
 
 ### Demo
-[DEMO](https://salt-id-card.vercel.app/)
+[DEMO](https://fuzzy-garbanzo-93ok8on.pages.github.io/)
 
 
