@@ -4,7 +4,6 @@ import { Card } from "../card";
 import { Form } from "../form";
 import html2canvas from "html2canvas";
 import "./idCardGenerator.css";
-import 'react-tooltip/dist/react-tooltip.css'
 import { InfoBox } from "../../info-box/infoBox";
 
 export const IdCardGenerator = () => {
