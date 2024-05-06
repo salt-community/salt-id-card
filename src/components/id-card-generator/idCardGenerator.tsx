@@ -4,8 +4,6 @@ import { Card } from "../card";
 import { Form } from "../form";
 import html2canvas from "html2canvas";
 import "./idCardGenerator.css";
-import "react-tooltip/dist/react-tooltip.css";
-import { Tooltip } from "react-tooltip";
 
 export const IdCardGenerator = () => {
   const [input, setInput] = useState({
@@ -16,9 +14,7 @@ export const IdCardGenerator = () => {
   });
   const printRef = useRef<HTMLInputElement>(null);
 
-  const inputForm = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const inputForm = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setInput({
       ...input,
@@ -27,13 +23,12 @@ export const IdCardGenerator = () => {
   };
 
   const handlePhoto = (e: ChangeEvent<HTMLInputElement>) => {
-    if(e.target.files !== null){
+    if (e.target.files !== null) {
       setInput({
         ...input,
         ["photo"]: URL.createObjectURL(e.target.files[0]),
       });
     }
-    
   };
 
   const handlePrint = async () => {
@@ -68,18 +63,14 @@ export const IdCardGenerator = () => {
           onChange={(e) => inputForm(e)}
           handlePhoto={(e) => handlePhoto(e)}
         />
-        <CtaButton
-          onClick={handlePrint}
-          disabled={isFormValid()}
-          data-tooltip-id="my-tooltip"
-          data-tooltip-content="Hello to you too!"
-        >
+        <CtaButton onClick={handlePrint} disabled={isFormValid()}>
           Create card
         </CtaButton>
-        <Tooltip id="my-tooltip" />
       </div>
-      <div ref={printRef} className="card-container">
-        <Card input={input} />
+      <div className="card-container">
+        <div ref={printRef} className="card-print">
+          <Card input={input} />
+        </div>
       </div>
     </>
   );
