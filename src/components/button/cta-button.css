@@ -1,8 +1,14 @@
 .cta {
-  color: #fff;
+  color: var(--white);
   padding: 4px 8px;
-  background-color: var(--main-color);
+  background-color: var(--coral);
   max-width: fit-content;
   align-self: flex-end;
   border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.cta:disabled{
+  background-color: var(--light-gray);
 }

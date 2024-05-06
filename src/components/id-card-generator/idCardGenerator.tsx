@@ -1,35 +1,39 @@
-import { useRef, useState } from "react";
+import { ChangeEvent, useRef, useState } from "react";
 import { CtaButton } from "../button";
 import { Card } from "../card";
 import { Form } from "../form";
-import avatar from "../../assets/avatar.png";
 import html2canvas from "html2canvas";
 import "./idCardGenerator.css";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 export const IdCardGenerator = () => {
   const [input, setInput] = useState({
     name: "",
     startDate: "",
-    course: "",
-    photo: avatar,
+    course: "jfs-sthlm",
+    photo: "https://placehold.co/140x140",
   });
   const printRef = useRef<HTMLInputElement>(null);
 
   const inputForm = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    let { name, value } = e.target;
+    const { name, value } = e.target;
     setInput({
       ...input,
       [name]: value,
     });
   };
 
-  const handlePhoto = (e: any) => {
-    setInput({
-      ...input,
-      ["photo"]: URL.createObjectURL(e.target.files[0]),
-    });
+  const handlePhoto = (e: ChangeEvent<HTMLInputElement>) => {
+    if(e.target.files !== null){
+      setInput({
+        ...input,
+        ["photo"]: URL.createObjectURL(e.target.files[0]),
+      });
+    }
+    
   };
 
   const handlePrint = async () => {
@@ -53,6 +57,10 @@ export const IdCardGenerator = () => {
     document.body.removeChild(link);
   };
 
+  const isFormValid = () => {
+    console.log(input.name, input.course, input.startDate);
+    return input.name === "" || input.startDate === "";
+  };
   return (
     <>
       <div className="form-container">
@@ -60,7 +68,15 @@ export const IdCardGenerator = () => {
           onChange={(e) => inputForm(e)}
           handlePhoto={(e) => handlePhoto(e)}
         />
-        <CtaButton onClick={handlePrint}>Create card</CtaButton>
+        <CtaButton
+          onClick={handlePrint}
+          disabled={isFormValid()}
+          data-tooltip-id="my-tooltip"
+          data-tooltip-content="Hello to you too!"
+        >
+          Create card
+        </CtaButton>
+        <Tooltip id="my-tooltip" />
       </div>
       <div ref={printRef} className="card-container">
         <Card input={input} />
