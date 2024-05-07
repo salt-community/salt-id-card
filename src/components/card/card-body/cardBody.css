@@ -5,8 +5,8 @@
 }
 
 .card-body__img {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -22,4 +22,9 @@
 
 .card-body__info dt {
   font-weight: 600;
+  font-size: 12px;
+}
+
+.card-body__info dd {
+  font-size: 13px;
 }

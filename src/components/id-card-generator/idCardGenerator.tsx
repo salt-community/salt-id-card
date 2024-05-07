@@ -11,7 +11,7 @@ export const IdCardGenerator = () => {
     name: "",
     startDate: "",
     course: "jfs-sthlm",
-    photo: "https://placehold.co/140x140",
+    photo: "https://placehold.co/100x100",
   });
   const printRef = useRef<HTMLInputElement>(null);
 

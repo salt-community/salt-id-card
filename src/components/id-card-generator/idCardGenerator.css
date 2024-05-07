@@ -19,6 +19,16 @@
 }
 
 .card-print{
-  height: 300px;
-  width: 500px;
+  width: 400px;
+  height: 250px;
+}
+
+@media screen and (max-width: 1025px){
+  .form-container{
+    width: 100%;
+  }
+  .card-container{
+    width: 100%;
+    padding: 10px 0;
+  }
 }

@@ -10,6 +10,15 @@
   margin-left: 10px;
 }
 
+.card-footer__validity dt{
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.card-footer__validity dd{
+  font-size: 13px;
+}
+
 .card-footer__qrcode {
   width: 80px;
 }
