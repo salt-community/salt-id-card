@@ -3,4 +3,5 @@ export type FormInputType = {
   startDate: string;
   course: string;
   photo: string;
+  email:string;
 };

@@ -1,1 +1,1 @@
-export * from "./infoBox";
+export * from "./info-box.tsx";

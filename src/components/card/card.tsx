@@ -1,18 +1,18 @@
 import "./card.css";
 import { CardHead } from "./card-head";
-import { CardBody } from "./card-body/cardBody";
+import { CardBody } from "./card-body";
 import { FormInputType } from "../../types";
 import { CardFooter } from "./card-footer";
 
-type CardProps = {
-  input: FormInputType;
+type Props = {
+  formData: FormInputType;
 };
-export const Card = ({ input }: CardProps) => {
+export const Card = ({ formData }: Props) => {
   return (
     <div className="card-wrapper">
       <CardHead />
-      <CardBody input={input} />
-      <CardFooter input={input} />
+      <CardBody formData={formData} />
+      <CardFooter startDate={formData.startDate} />
     </div>
   );
 };

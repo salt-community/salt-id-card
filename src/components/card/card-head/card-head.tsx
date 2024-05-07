@@ -1,5 +1,5 @@
 import saltLogo from "../../../assets/salt-logo-dark.svg";
-import "./cardHead.css"
+import "./card-head.css"
 
 export const CardHead = () => {
   return (

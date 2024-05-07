@@ -1,1 +1,1 @@
-export * from "./cardBody";
+export * from "./card-body.tsx";

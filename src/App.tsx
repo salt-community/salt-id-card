@@ -1,10 +1,10 @@
-import "./App.css";
-import { IdCardGenerator } from "./components";
+import "./app.css";
+import { IdCard } from "./components/id-card/index";
 
 const App = () => {
   return (
       <div className="container">
-        <IdCardGenerator />
+        <IdCard />
       </div>
   );
 };

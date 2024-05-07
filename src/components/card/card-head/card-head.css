@@ -1,0 +1,27 @@
+.card-section__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-head__logo {
+    width: 60px;
+    padding: 0 5px;
+}
+
+.card-head__name {
+    flex-grow: 2;
+    font-size: 13px;
+}
+
+.card-head__status {
+    flex-grow: 1;
+    text-transform: uppercase;
+    background-color: var(--coral);
+    color: var(--white);
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 300;
+    border-radius: 5px;
+    padding: 2px;
+}

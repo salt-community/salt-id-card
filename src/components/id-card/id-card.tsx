@@ -1,22 +1,23 @@
-import { ChangeEvent, useRef, useState } from "react";
-import { CtaButton } from "../button";
-import { Card } from "../card";
-import { Form } from "../form";
+import {ChangeEvent, useRef, useState} from "react";
+import {CtaButton} from "../button";
+import {Card} from "../card";
+import {Form} from "../form";
 import html2canvas from "html2canvas";
-import "./idCardGenerator.css";
-import { InfoBox } from "../../info-box/infoBox";
+import "./id-card.css";
+import {InfoBox} from "../../info-box";
 
-export const IdCardGenerator = () => {
+export const IdCard = () => {
   const [input, setInput] = useState({
     name: "",
     startDate: "",
     course: "jfs-sthlm",
     photo: "https://placehold.co/100x100",
+    email: ""
   });
   const printRef = useRef<HTMLInputElement>(null);
 
   const inputForm = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setInput({
       ...input,
       [name]: value,
@@ -54,7 +55,7 @@ export const IdCardGenerator = () => {
   };
 
   const isFormValid = () => {
-    return input.name === "" || input.startDate === "" || input.photo === "https://placehold.co/140x140";
+    return input.name === "" || input.startDate === "" || input.photo === "https://placehold.co/100x100";
   };
   return (
     <>
@@ -62,7 +63,7 @@ export const IdCardGenerator = () => {
         <Form
           onChange={(e) => inputForm(e)}
           handlePhoto={(e) => handlePhoto(e)}
-        />  
+        />
         <InfoBox content="Option to create card will be available after filling form." visible={isFormValid()}/>
         <CtaButton
           onClick={handlePrint}
@@ -74,7 +75,7 @@ export const IdCardGenerator = () => {
       </div>
       <div className="card-container">
         <div ref={printRef} className="card-print">
-          <Card input={input} />
+          <Card formData={input}/>
         </div>
       </div>
     </>

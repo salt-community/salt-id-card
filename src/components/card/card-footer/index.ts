@@ -1,1 +1,1 @@
-export * from "./cardFooter";
+export * from "./card-footer.tsx";
