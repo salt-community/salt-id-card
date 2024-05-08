@@ -2,20 +2,15 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    gap: 5px;
 }
 
-.card-footer__validity {
-    display: flex;
-    gap: 10px;
-    margin-left: 10px;
+.card-footer__email {
+    max-width: 300px;
+    overflow-wrap: break-word;
 }
 
-.card-footer__validity dt {
-    font-weight: 700;
-    font-size: 12px;
-}
-
-.card-footer__validity dd {
+.card-footer__email dd {
     font-size: 13px;
 }
 

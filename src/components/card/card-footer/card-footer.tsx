@@ -2,21 +2,30 @@ import qrcode from "../../../assets/qrcode.png";
 import "./card-footer.css"
 
 type Props = {
-   startDate: string
+  email: string
 }
-export const CardFooter = ({startDate}:Props) => {
-    const validUntil = () => {
-        const splitDate = startDate.split("-");
-        splitDate[0] = `${+splitDate[0] + 2}`;
-        return splitDate.join("-");
-      };
+export const CardFooter = ({email}: Props) => {
+  const emailPrefix = email.split("@")[0];
+  const emailSuffix = "@appliedtechnology.se";
+  const emailContent = () => {
+    const maxEmailPrefixLength = 20;
+    if (emailPrefix.length > maxEmailPrefixLength) {
+      return (
+        <>
+          <dd>{emailPrefix}</dd>
+          <dd>{emailSuffix}</dd>
+        </>
+      )
+    }
+    return <dd>{email}</dd>
+  }
+
   return (
     <section className="card-section__footer">
-      <dl className="card-footer__validity">
-        <dt>Valid until</dt>
-        <dd>{startDate && validUntil()}</dd>
+      <dl className="card-footer__email">
+        {emailContent()}
       </dl>
-      <img src={qrcode} alt="QR code" className="card-footer__qrcode" />
+      <img src={qrcode} alt="QR code" className="card-footer__qrcode"/>
     </section>
   );
 };
