@@ -1,8 +1,8 @@
-import {Logo} from "../logo";
-import {SignOutButton} from "@clerk/clerk-react";
-import {CtaButton} from "../button";
-import {useLocation} from "react-router-dom";
-import './navbar.css'
+import { Logo } from "../logo";
+import { SignOutButton } from "@clerk/clerk-react";
+import { CtaButton } from "../button";
+import { useLocation } from "react-router-dom";
+import "./navbar.css";
 
 export const Navbar = () => {
   const location = useLocation();
