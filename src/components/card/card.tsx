@@ -1,18 +1,22 @@
 import "./card.css";
 import {CardHead} from "./card-head";
 import {CardBody} from "./card-body";
-import {FormInputType} from "../../types";
+
 import {CardFooter} from "./card-footer";
+import {User} from "../../types.ts";
+import React, {forwardRef} from "react";
 
 type Props = {
-  formData: FormInputType;
+  userData: User;
 };
-export const Card = ({formData}: Props) => {
+export const Card = forwardRef(function Card(props: Props, ref: React.ForwardedRef<HTMLDivElement>) {
+  const {userData} = props;
   return (
-    <div className="card-wrapper">
+    <div className="card-wrapper" ref={ref}>
       <CardHead/>
-      <CardBody formData={formData}/>
-      <CardFooter email={formData.email}/>
+      <CardBody image={userData.image} name={userData.fullName}/>
+      <CardFooter email={userData.email}/>
     </div>
   );
-};
+});
+

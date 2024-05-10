@@ -1,0 +1,32 @@
+.button-wrapper {
+    display: flex;
+    gap: 50px;
+}
+.logged-in__section{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    max-width: 1536px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.id-card__wrapper{
+    flex-grow: 2;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.card-id__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%;
+}

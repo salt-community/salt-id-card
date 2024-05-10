@@ -1,0 +1,9 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1536px;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+}

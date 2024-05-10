@@ -1,11 +1,10 @@
 import "./app.css";
-import { IdCard } from "./components/id-card/index";
+import {Authentication} from "./authentication";
+
 
 const App = () => {
   return (
-      <div className="container">
-        <IdCard />
-      </div>
+    <Authentication />
   );
 };
 

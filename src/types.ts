@@ -1,7 +1,6 @@
-export type FormInputType = {
-  name: string;
-  startDate: string;
-  course: string;
-  photo: string;
-  email:string;
-};
+export type User ={
+  fullName: string | null,
+  image: string,
+  email: string | undefined
+  firstName: string | null
+}
