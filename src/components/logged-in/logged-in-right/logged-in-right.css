@@ -1,0 +1,8 @@
+.id-card__wrapper{
+    flex-grow: 2;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}

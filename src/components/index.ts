@@ -3,6 +3,9 @@ export * from "./title";
 export * from "./info-box";
 export * from "./button";
 export * from "./card-info";
-export * from "./navbar";
+export * from "./layout/navbar";
 export * from "./id-card";
 export * from "./page-not-found";
+export * from "./layout/main"
+export * from './logged-in'
+export * from './logged-out'

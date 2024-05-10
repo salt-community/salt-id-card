@@ -1,5 +1,5 @@
 type Props={
-  content: string
+  content?: string
 }
 
 export const InfoBox = ({content}:Props) => {

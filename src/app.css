@@ -1,31 +1,15 @@
 .root {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
     background-color: var(--coral-light);
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-width: 1536px;
-    margin: 0 auto;
-    height: 100vh;
-    overflow: hidden;
-}
 
 @media screen and (max-width: 1025px) {
-    .container {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-    }
-
     .root {
-        height: auto;
+        width: 100%;
     }
 }

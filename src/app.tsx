@@ -1,11 +1,11 @@
 import "./app.css";
-import {Authentication} from "./authentication";
-
+import {Main} from "./components";
 
 const App = () => {
   return (
-    <Authentication />
+    <div className="root">
+      <Main/>
+    </div>
   );
 };
-
 export default App;

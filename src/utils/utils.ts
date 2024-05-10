@@ -23,3 +23,10 @@ export const handlePrint = async (userData: User, printRef: React.RefObject<HTML
   link.click();
   document.body.removeChild(link);
 };
+
+export const listOfSteps = [
+  "Select academic status \"Student\".",
+  "In the application section select \"Applied Technology - SALT\" as your school name.",
+  "Link your @appliedtechnology.se email to your github account.",
+  "Upload Salt ID Card as the proof of your academic status."
+]

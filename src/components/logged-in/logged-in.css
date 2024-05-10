@@ -1,0 +1,17 @@
+.logged-in__section{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.logged-in__wrapper{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 30px 50px;
+}
