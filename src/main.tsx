@@ -4,7 +4,6 @@ import "./index.css";
 import { ClerkProvider } from "@clerk/clerk-react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./app.tsx";
-import { PageNotFound } from "./components";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -15,7 +14,6 @@ export const router = createBrowserRouter([
   {
     path: "/salt_id_card/",
     element: <App />,
-    errorElement: <PageNotFound />,
   },
 ]);
 
