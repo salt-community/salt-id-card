@@ -15,7 +15,7 @@ export const LoggedInRight = ({userData}:Props) => {
       <IdCard userData={userData} ref={printRef} />
       <CtaButton
         onClick={() => handlePrint(userData, printRef)}
-        variant="success"
+        variant="info"
       >
         Download my ID
       </CtaButton>

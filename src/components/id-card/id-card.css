@@ -24,3 +24,13 @@
     flex-direction: column;
     gap: 10px;
 }
+.card-wrapper {
+    background-color: var(--white);
+    width: 400px;
+    height: 250px;
+    border: 2px solid var(--coral);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}

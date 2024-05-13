@@ -6,11 +6,12 @@ export const ApplicationSteps = () => {
     <>
       <Subtitle content="Application steps:"/>
       <ol>
-        {listOfSteps.map(element => {
-          return (
-            <li>{element}</li>
-          )
-        })}
+        {listOfSteps.map(
+          (element, index) => {
+            return (
+              <li key={index}>{element}</li>
+            )
+          })}
       </ol>
     </>
   );
