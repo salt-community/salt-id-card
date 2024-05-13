@@ -7,7 +7,7 @@
     border: none;
 }
 
-.cta.success{
+.cta.info{
     background-color: var(--blue);
 }
 
