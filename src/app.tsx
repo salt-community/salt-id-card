@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import "./app.css";
-import { Main } from "./components";
 
 const App = () => {
   const course = new URLSearchParams(useLocation().search).get("name");
@@ -16,7 +15,7 @@ const App = () => {
     <div className="root">
       <h2>{course}</h2>
       <h2>{startDate}</h2>
-      <Main />
+      {/* <Main /> */}
     </div>
   );
 };
