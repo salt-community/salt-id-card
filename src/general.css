@@ -1,9 +1,9 @@
 :root{
-    --white: #fff;
+    --white: #ffffff;
     --beige: #FFFCF2;
     --light-gray: #ddd;
     --medium-gray: #403d39;
-    --dark-gray: var(--white);
+    --dark-gray: #2b2b2c;
     --coral: #FE9087;
     --blue: #1875FF;
     --green: #218838;
