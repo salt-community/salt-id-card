@@ -10,7 +10,7 @@ if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
 }
 
-export const router = createBrowserRouter([
+const routers = createBrowserRouter([
   {
     path: "/salt_id_card/",
     element: <App />,
@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <RouterProvider router={router} />
+      <RouterProvider router={routers} />
     </ClerkProvider>
   </React.StrictMode>
 );
