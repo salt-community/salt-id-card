@@ -1,9 +1,9 @@
 {
   "name": "salt_id_card",
+  "homepage": "https://salt-community.github.io/salt_id_card/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://fuzzy-garbanzo-93ok8on.pages.github.io/#",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
