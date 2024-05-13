@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import {ClerkProvider} from '@clerk/clerk-react'
-import {HashRouter, RouterProvider} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import App from "./app.tsx";
-import {router} from "./components/routing/routing.tsx";
 
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
@@ -18,7 +17,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <HashRouter basename={"/card/course"}>
         <App/>
       </HashRouter>
-      <RouterProvider router={router}/>
     </ClerkProvider>
   </React.StrictMode>,
 )
