@@ -13,7 +13,7 @@ if (!PUBLISHABLE_KEY) {
 
 export const router = createBrowserRouter([
   {
-    path: "/salt_id_card/card/course/",
+    path: "/salt_id_card/",
     element: <App />,
     errorElement: <PageNotFound />,
   },
