@@ -1,14 +1,12 @@
 name: Deploy
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 on:
   push:
     branches:
       - main
+
+env:
+  VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
 
 jobs:
   build:
@@ -22,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
