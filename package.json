@@ -1,7 +1,7 @@
 {
   "name": "vite-react-router",
   "homepage": "https://kevingida.github.io/salt-id-card/",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
