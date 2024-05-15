@@ -2,7 +2,7 @@ import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
 import { CtaButton, Form, Tooltip } from "../../components";
 import { isDisabled } from "../../utils/utils";
-import { PageNotFoundHeader } from "./page-not-found-header";
+import { PageNotFoundHead } from "./page-not-found-head";
 import { Clipboard } from "../clipboard";
 
 export const PageNotFound = () => {
@@ -27,7 +27,7 @@ export const PageNotFound = () => {
 
   return (
     <div className="page-not-found__container">
-      <PageNotFoundHeader />
+      <PageNotFoundHead />
       <Form onChange={inputForm} />
       <Tooltip
         content="Fill all fields!"

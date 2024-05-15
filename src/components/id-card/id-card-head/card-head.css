@@ -17,7 +17,7 @@
 .card-head__status {
     flex-grow: 1;
     text-transform: uppercase;
-    background-color: var(--background-tertiery);
+    background-color: var(--background-primary-dark);
     color: var(--text-tertiery-light);
     text-align: center;
     letter-spacing: 2px;

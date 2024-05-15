@@ -1,16 +1,16 @@
-.page-not-found-header {
+.page-not-found-head {
     color: var(--text-primary);
     font-size: 25px;
     text-align: center;
   }
 
-  .page-not-found-header h1{
+  .page-not-found-head h1{
     font-size: 90px;
     color: var(--text-secondary);
     line-height: 0.8;
   }
 
-  .page-not-found-header h3 {
+  .page-not-found-head h3 {
     font-size: 50px;
     color: var(--text-secondary);
   }
