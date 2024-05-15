@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 1536px;
+  padding: 10px 120px;
+  position: fixed;
+  top: 0;
+}
+
+@media screen and (max-width: 1025px) {
+  nav {
+    padding: 10px;
+  }
+}

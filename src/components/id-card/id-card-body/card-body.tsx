@@ -7,11 +7,12 @@ type CardBodyProp = {
 }
 export const CardBody = ({image, name}: CardBodyProp) => {
   const course = new URLSearchParams(useLocation().search).get("name");
-  // console.log(date)
-  const startDate = new URLSearchParams(useLocation().search).get("date")
+  const date = new URLSearchParams(useLocation().search).get("date")
+  const location = new URLSearchParams(useLocation().search).get("location")
+
   const validUntil = () => {
-    if(startDate){
-      const splitDate = startDate.split("-");
+    if(date){
+      const splitDate = date.split("-");
       splitDate[0] = `${+splitDate[0] + 2}`;
       return splitDate.join("-");
     }
@@ -28,9 +29,9 @@ export const CardBody = ({image, name}: CardBodyProp) => {
         <dt>Name</dt>
         <dd>{name}</dd>
         <dt>Course</dt>
-        <dd>{startDate && `${course}-${startDate}`}</dd>
+        <dd>{date && `${course}-${location}-${date}`}</dd>
         <dt>Valid until</dt>
-        <dd>{startDate && validUntil()}</dd>
+        <dd>{date && validUntil()}</dd>
       </dl>
     </section>
   );

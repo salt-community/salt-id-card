@@ -1,5 +1,11 @@
-.card-info__container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.card-info__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-info-main {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

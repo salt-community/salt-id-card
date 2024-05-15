@@ -1,4 +1,5 @@
 import './title.css'
+
 type Props={
   content: string
 }

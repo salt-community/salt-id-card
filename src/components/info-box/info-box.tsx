@@ -4,6 +4,6 @@ type Props={
 
 export const InfoBox = ({content}:Props) => {
   return (
-    <span>{content}</span>
+    <p>{content}</p>
   );
 };

@@ -1,16 +1,21 @@
 .cta {
-    color: var(--white);
-    padding: 5px 10px;
-    max-width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
+  color: var(--text-tertiery-light);
+  border-radius: 50px;
+  padding: 5px 35px;
+  max-width: fit-content;
+  cursor: pointer;
+  border: none;
 }
 
-.cta.info{
-    background-color: var(--blue);
+.cta.info {
+  background-color: var(--button-secondary);
 }
 
-.cta.primary{
-    background-color: var(--coral);
+.cta.primary {
+  background-color: var(--button-primary);
+}
+
+.cta:disabled {
+  background-color: var(--button-disabled);
+  cursor: no-drop;
 }

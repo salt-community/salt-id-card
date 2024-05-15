@@ -1,0 +1,13 @@
+.main-content-right__wrapper {
+  flex-grow: 2;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 50px;
+}
+
+.clipboard-tooltip {
+  width: fit-content;
+}

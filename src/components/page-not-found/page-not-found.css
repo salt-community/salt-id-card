@@ -1,4 +1,40 @@
-.page-not-found{
-    color: var(--dark-gray);
-    font-size: 25px;
+.page-not-found__container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-secondary-dark);
+}
+
+.page-not-found__url-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  color: var(--text-tertiery-dark);
+  background-color: var(--background-tertiery);
+}
+
+.clipboard {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.clipboard:hover {
+  background-color: var(--background-primary-dark);
+}
+
+.page-not-found__url-container a {
+  color: var(--text-tertiery-dark);
+  width: 30px;
+  height: 30px;
 }

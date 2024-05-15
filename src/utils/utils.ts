@@ -1,12 +1,17 @@
 import html2canvas from "html2canvas";
-import {User} from "../types.ts";
+import { User } from "../types.ts";
 import React from "react";
+import { dateRegex, listOfCourses, listOfLocations } from "../constants.ts";
 
-export const handlePrint = async (userData: User, printRef: React.RefObject<HTMLDivElement>) => {
+export const handlePrint = async (
+  userData: User,
+  printRef: React.RefObject<HTMLDivElement>
+) => {
   const element = printRef!.current;
   const canvas = await html2canvas(element!, {
     useCORS: true,
     scale: 4,
+    backgroundColor: "transparent",
   });
 
   const data = canvas.toDataURL("image/png");
@@ -24,9 +29,31 @@ export const handlePrint = async (userData: User, printRef: React.RefObject<HTML
   document.body.removeChild(link);
 };
 
-export const listOfSteps = [
-  "Select academic status \"Student\".",
-  "In the application section select \"Applied Technology - SALT\" as your school name.",
-  "Link your @appliedtechnology.se email to your github account.",
-  "Upload Salt ID Card as the proof of your academic status."
-]
+export const isDisabled = (date: string, course: string, location: string) => {
+  const dateValid = dateValidation(date);
+  const courseValid = courseValidation(course);
+  const locationValid = locationValidation(location);
+  return !dateValid || !courseValid || !locationValid;
+};
+
+export const dateValidation = (date: string): boolean => {
+  const year = +date.split("-")[0];
+  if (year < 2018) return false;
+  if (dateRegex.test(date)) return true;
+  return false;
+};
+
+const courseValidation = (course: string) => {
+  if (course === "") return false;
+  return (
+    [...listOfCourses.filter((element) => element.name === course)].length !== 0
+  );
+};
+
+const locationValidation = (location: string) => {
+  if (location === "") return false;
+  return (
+    [...listOfLocations.filter((element) => element.name === location)]
+      .length !== 0
+  );
+};

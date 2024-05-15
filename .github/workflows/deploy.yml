@@ -7,6 +7,7 @@ on:
 
 env:
   VITE_CLERK_PUBLISHABLE_KEY: ${{ secrets.VITE_CLERK_PUBLISHABLE_KEY }}
+  VITE_BASE_URL: ${{secrets.VITE_BASE_URL}}
 
 jobs:
   build:

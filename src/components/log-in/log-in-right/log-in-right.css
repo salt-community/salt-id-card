@@ -1,0 +1,11 @@
+.logged-out__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: flex-end;
+  gap: 40px;
+  width: 100%;
+  text-align: justify;
+  height: 100%;
+}

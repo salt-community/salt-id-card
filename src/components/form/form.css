@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+.form-date__error {
+  color: var(--text-error);
+}
+
+.form input,
+.form select {
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid var(--border-primary);
+  box-shadow: 2px 2px 5px var(--border-secondary);
+}
+
+.form select {
+  padding: 5px 10px;
+}
+
+.form input {
+  padding: 2px 10px;
+}
+
+.form label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 20px;
+  padding-left: 5px;
+  color: var(--text-secondary);
+}

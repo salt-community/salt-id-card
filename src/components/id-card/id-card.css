@@ -1,36 +1,21 @@
-.form-container {
-  background-color: var(--beige);
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  gap: 10px;
-  position: relative
-}
-
-.card-print{
-  width: 400px;
-  height: 250px;
-}
-
-@media screen and (max-width: 1025px){
-  .form-container{
+@media screen and (max-width: 1025px) {
+  .form-container {
     width: 100%;
   }
 }
-.id-card-container{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.id-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .card-wrapper {
-    background-color: var(--white);
-    width: 400px;
-    height: 250px;
-    border: 2px solid var(--coral);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+  background-color: var(--background-secondary-light);
+  width: 400px;
+  height: 250px;
+  border: 2px solid var(--border-tertiery);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
 }

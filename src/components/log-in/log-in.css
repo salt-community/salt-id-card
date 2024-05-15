@@ -1,0 +1,27 @@
+.logged-out-container {
+  width: 60%;
+  margin: 0 auto;
+  background-color: var(--background-secondary-light);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+  padding: 50px 50px;
+  min-height: 300px;
+  gap: 10px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1025px) {
+  .logged-out-container {
+    width: 90%;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1026px) and (max-width: 1200px) {
+  .logged-out-container {
+    width: 90%;
+  }
+}
