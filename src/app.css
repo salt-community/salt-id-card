@@ -1,15 +1,15 @@
 .root {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--coral-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-primary-light);
 }
 
-
 @media screen and (max-width: 1025px) {
-    .root {
-        width: 100%;
-    }
+  .root {
+    width: 100%;
+    overflow: hidden;
+  }
 }
