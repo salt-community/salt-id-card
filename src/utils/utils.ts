@@ -1,17 +1,14 @@
 import html2canvas from "html2canvas";
-import { User } from "../types.ts";
+import {User} from "../types.ts";
 import React from "react";
-import { dateRegex, listOfCourses, listOfLocations } from "../constants.ts";
+import {dateRegex, listOfCourses, listOfLocations} from "../constants.ts";
 
-export const handlePrint = async (
-  userData: User,
-  printRef: React.RefObject<HTMLDivElement>
-) => {
+export const handlePrint = async (userData: User, printRef: React.RefObject<HTMLDivElement>) => {
   const element = printRef!.current;
   const canvas = await html2canvas(element!, {
     useCORS: true,
     scale: 4,
-    backgroundColor: "transparent",
+    backgroundColor: "transparent"
   });
 
   const data = canvas.toDataURL("image/png");
@@ -33,8 +30,8 @@ export const isDisabled = (date: string, course: string, location: string) => {
   const dateValid = dateValidation(date);
   const courseValid = courseValidation(course);
   const locationValid = locationValidation(location);
-  return !dateValid || !courseValid || !locationValid;
-};
+  return !dateValid || !courseValid  || !locationValid;
+}
 
 export const dateValidation = (date: string): boolean => {
   const year = +date.split("-")[0];
@@ -45,15 +42,10 @@ export const dateValidation = (date: string): boolean => {
 
 const courseValidation = (course: string) => {
   if (course === "") return false;
-  return (
-    [...listOfCourses.filter((element) => element.name === course)].length !== 0
-  );
-};
+  return [...listOfCourses.filter(element => element.name === course)].length !== 0;
+}
 
 const locationValidation = (location: string) => {
   if (location === "") return false;
-  return (
-    [...listOfLocations.filter((element) => element.name === location)]
-      .length !== 0
-  );
-};
+  return [...listOfLocations.filter(element => element.name === location)].length !== 0;
+}

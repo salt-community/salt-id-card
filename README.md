@@ -1,18 +1,30 @@
-## About
-App created to make process of applying by students for github benefits easier and faster. 
+# React + TypeScript + Vite
 
-### Process of getting benefits from github (with contract):
-1. Entering page https://education.github.com/pack.
-2. Click on *Sign up for Student Developer Pack*.
-3. Scroll down to the section Application where you need to enter the name of the school (choose from the list) our case: Applied Technology - SALT.
-4. Email from appliedtechnology.se has to be added to github in order to enable Continue. 
-5. Upload proof of academic status either contract of student ID. For now we have only contract. Proccess application. With contract expected time of response is estimated to not more than 11 days.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-### Excalidraw 
-[Simple view of the app](https://excalidraw.com/#json=bTwsnrCGFfx5t6UX28L74,IhnCz-hZiStd2vf0rz3djw)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-### Demo
-[DEMO](https://fuzzy-garbanzo-93ok8on.pages.github.io/)
+## Expanding the ESLint configuration
 
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
+
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
