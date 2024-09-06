@@ -14,7 +14,7 @@ Redirect you to the right page.
 
 #### Generating card:
 1. Paste provided link in the browser you will end up on signing page.
-2. Before Signing in make sure to upload gmail profile picture for @appliedtechnology.se email 
+2. Before Signing in make sure to upload gmail profile picture for @appliedtechnology.se email and select "Visibility to Anyone"
 as that image will be used for your Salt ID card. 
 3. Make sure to sign in with @appliedtechnology.se other emails will be denied.
 4. Download your generated ID card.
