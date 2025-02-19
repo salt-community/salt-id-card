@@ -25,7 +25,7 @@ export const CardFooter = ({ email }: Props) => {
     <section className="card-section__footer">
       <dl className="card-footer__email">{emailContent()}</dl>
       <QRCode
-        value={VITE_BASE_URL + "/salt-id-card/"}
+        value={VITE_BASE_URL + "/salt-id-card/validate/"}
         className="card-footer__qrcode"
       />
     </section>
