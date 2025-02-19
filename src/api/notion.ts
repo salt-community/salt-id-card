@@ -1,6 +1,6 @@
 import { IdCard } from "../types";
 
-export function getSaltCardData(email: string): IdCard {
+export async function getSaltCardData(email: string | undefined): Promise<IdCard> {
   return {
     name: "Tobias Johansson",
     course: "jfs-sthlm-2024-09-06",
