@@ -25,12 +25,12 @@ export function Validate() {
           course: idCardData.course,
           endDate: idCardData.endDate,
           status: idCardData.status,
-          image: "",
+          image: idCardData.image,
         });
       }
     };
     execute();
   }, [email]);
-  
+
   return <IdCard userData={userData} />;
 }
