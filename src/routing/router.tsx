@@ -7,4 +7,9 @@ export const router = createBrowserRouter([
     element: <App />,
     errorElement: <></>,
   },
+  {
+    path: "/salt-id-card/validate",
+    element: <></>,
+    errorElement: <></>,
+  },
 ]);
