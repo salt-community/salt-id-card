@@ -1,14 +1,13 @@
-export type User ={
-  fullName: string | null,
-  image: string,
-  email: string | undefined
-  firstName: string | null
-}
+export type User = {
+  fullName: string | null;
+  image: string;
+  email: string | undefined;
+};
 
 export type IdCard = {
   name: string;
   course: string;
   endDate: string;
-  email: string;
+  email: string | undefined;
   status: string;
 };
