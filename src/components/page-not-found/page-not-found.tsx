@@ -1,7 +1,6 @@
 import "./page-not-found.css";
 import { ChangeEvent, useState } from "react";
 import { CtaButton, Form, Tooltip } from "../../components";
-import { isDisabled } from "../../utils/utils";
 import { PageNotFoundHead } from "./page-not-found-head";
 import { Clipboard } from "../clipboard";
 
@@ -23,7 +22,7 @@ export const PageNotFound = () => {
 
   const baseUrl = import.meta.env.VITE_BASE_URL;
   const queryParams = `?date=${date}&name=${course}&location=${location}`;
-  const disabled = isDisabled(date, course, location);
+  const disabled = true;
 
   return (
     <div className="page-not-found__container">
