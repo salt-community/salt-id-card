@@ -1,3 +1,6 @@
+import { useLocation } from "react-router-dom";
+
 export function Validate() {
-  return <></>;
+  const email = new URLSearchParams(useLocation().search).get("email");
+  return <p>{email}</p>;
 }
