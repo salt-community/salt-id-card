@@ -15,7 +15,7 @@ export const handlePrint = async (userData: User, printRef: React.RefObject<HTML
   const link = document.createElement("a");
 
   link.href = data;
-  link.download = `${userData!.fullName}.png`;
+  link.download = `${userData.name}.png`;
 
   document.body.appendChild(link);
   const style = document.createElement("style");
