@@ -1,5 +1,4 @@
 import "./card-body.css";
-import { useLocation } from "react-router-dom";
 
 type CardBodyProp = {
   image: string;
