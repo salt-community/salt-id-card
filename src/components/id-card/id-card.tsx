@@ -12,8 +12,8 @@ export const IdCard = forwardRef(function IdCard(props: Props, ref: React.Forwar
   const {userData} = props;
   return (
     <div className="card-wrapper" ref={ref}>
-      <CardHead />
-      <CardBody image={userData.image} name={userData.fullName} />
+      <CardHead status={userData.status} />
+      <CardBody image={userData.image} name={userData.name} />
       <CardFooter email={userData.email} />
     </div>
   );
