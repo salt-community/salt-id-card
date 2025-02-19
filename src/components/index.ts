@@ -5,7 +5,6 @@ export * from "./button";
 export * from "./card-info";
 export * from "./navbar";
 export * from "./id-card";
-export * from "./page-not-found";
 export * from "./main-content"
 export * from "./log-in"
 export * from './subtitle'
