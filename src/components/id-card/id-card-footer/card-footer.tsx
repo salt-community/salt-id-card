@@ -1,4 +1,4 @@
-import qrcode from "../../../assets/qrcode.png";
+import QRCode from "react-qr-code";
 import "./card-footer.css"
 
 type Props = {
@@ -25,7 +25,7 @@ export const CardFooter = ({email}: Props) => {
       <dl className="card-footer__email">
         {emailContent()}
       </dl>
-      <img src={qrcode} alt="QR code" className="card-footer__qrcode"/>
+      <QRCode value="http://192.168.101.217:5173/salt-id-card/" className="card-footer__qrcode"/>
     </section>
   );
 };
