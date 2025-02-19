@@ -31,7 +31,7 @@ export const MainContentRight = () => {
           course: idCardData.course,
           endDate: idCardData.endDate,
           status: idCardData.status,
-          image: user.externalAccounts[0].imageUrl,
+          image: idCardData.image,
         });
       }
     };
