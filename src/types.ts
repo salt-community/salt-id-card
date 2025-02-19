@@ -1,7 +1,10 @@
 export type User = {
-  fullName: string | null;
-  image: string;
+  name: string;
+  course: string;
+  endDate: string;
   email: string | undefined;
+  status: string;
+  image: string;
 };
 
 export type IdCard = {
