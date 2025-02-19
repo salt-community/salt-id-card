@@ -5,6 +5,7 @@ import "./main-content-right.css";
 import { useLocation } from "react-router-dom";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
+import { getSaltCardData } from "../../../api/notion.ts";
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
@@ -14,17 +15,32 @@ export const MainContentRight = () => {
   const disabled = isDisabled(date!, name!, location!);
 
   const { user } = useUser();
-  const [userData, setUserData] = useState<User>();
+  const [userData, setUserData] = useState<User>({
+    email: "loading...",
+    name: "loading...",
+    course: "loading...",
+    endDate: "loading...",
+    status: "loading...",
+    image: "loading...",
+  });
 
   useEffect(() => {
-    if (user) {
-      setUserData({
-        email: user.primaryEmailAddress?.emailAddress,
-        firstName: user.firstName,
-        fullName: user.fullName,
-        image: user.externalAccounts[0].imageUrl,
-      });
-    }
+    const execute = async () => {
+      if (user) {
+        const idCardData = await getSaltCardData(
+          user.primaryEmailAddress?.emailAddress
+        );
+        setUserData({
+          email: user.primaryEmailAddress?.emailAddress,
+          name: idCardData.name,
+          course: idCardData.course,
+          endDate: idCardData.endDate,
+          status: idCardData.status,
+          image: user.externalAccounts[0].imageUrl,
+        });
+      }
+    };
+    execute();
   }, [user]);
 
   return (
