@@ -32,5 +32,9 @@ export function Validate() {
     execute();
   }, [email]);
 
-  return <IdCard userData={userData} />;
+  return (
+    <div className="root">
+      <IdCard userData={userData} />
+    </div>
+  );
 }
