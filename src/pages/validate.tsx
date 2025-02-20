@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { User } from "../types";
 import { getSaltCardData } from "../api/notion";
-import { IdCard } from "../components";
+import { IdCard, Logo, Title } from "../components";
 
 export function Validate() {
   const email = new URLSearchParams(useLocation().search).get("email");
@@ -33,8 +33,14 @@ export function Validate() {
   }, [email]);
 
   return (
-    <div className="root">
+    <div className="validate">
+      <Logo />
+      <Title content="This salt id-card is valid" />
       <IdCard userData={userData} />
+      <p>
+        Get in contact with us at Salt by clicking{" "}
+        <a href="https://salt.dev/contact/">here</a>
+      </p>
     </div>
   );
 }
