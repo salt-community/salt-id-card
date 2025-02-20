@@ -5,6 +5,7 @@ import { getSaltCardData } from "../../api/notion";
 import { Logo } from "../logo";
 import { Title } from "../title";
 import { IdCard } from "../id-card";
+import { CtaButton } from "../button";
 
 export const ValidateContent = () => {
   const email = new URLSearchParams(useLocation().search).get("email");
@@ -41,9 +42,10 @@ export const ValidateContent = () => {
         <Title content="This salt id-card is valid" />
         <IdCard userData={userData} />
         <p>
-          Get in contact with us at Salt by clicking{" "}
-          <a href="https://salt.dev/contact/">here</a>
+          Get in contact with us at Salt
+          
         </p>
+        <CtaButton variant="primary" onClick={()=>window.open("https://salt.dev/contact/", "_blank")}>Contact</CtaButton>
       </div>
     </>
   );

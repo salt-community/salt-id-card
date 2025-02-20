@@ -5,14 +5,14 @@
   --text-tertiery-dark: #ebebeb;
   --text-error: #d23535;
   --background-primary-light: rgba(254, 144, 135, 0.1);
-  --background-primary-dark: #fe9087;
+  --background-primary-dark: #ff7961;
   --background-secondary-light: #ffffff;
   --background-secondary-dark: #ebebeb;
   --background-tertiery: #3c5366a8;
-  --button-primary: #fe9087;
+  --button-primary: #ff7961;
   --button-secondary: #1875ff;
   --button-disabled: #918f8d;
   --border-primary: #ebebeb;
   --border-secondary: #918f8d;
-  --border-tertiery: #fe9087;
+  --border-tertiery: #ff7961;
 }
