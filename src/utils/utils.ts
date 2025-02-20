@@ -1,7 +1,6 @@
 import html2canvas from "html2canvas";
 import {User} from "../types.ts";
 import React from "react";
-import {dateRegex} from "../constants.ts";
 
 export const handlePrint = async (userData: User, printRef: React.RefObject<HTMLDivElement>) => {
   const element = printRef!.current;
@@ -24,11 +23,4 @@ export const handlePrint = async (userData: User, printRef: React.RefObject<HTML
   );
   link.click();
   document.body.removeChild(link);
-};
-
-export const dateValidation = (date: string): boolean => {
-  const year = +date.split("-")[0];
-  if (year < 2018) return false;
-  if (dateRegex.test(date)) return true;
-  return false;
 };
