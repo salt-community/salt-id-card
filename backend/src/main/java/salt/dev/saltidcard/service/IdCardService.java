@@ -5,7 +5,7 @@ import salt.dev.saltidcard.model.User;
 
 @Service
 public class IdCardService {
-    public User getIdCard(){
+    public User getIdCard(String email){
         return new User("Tobias Johansson",
                 "jfs-sthlm-2024-09-06",
                 "2025-06-01",
