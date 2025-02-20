@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/v1/id-card")
-public class controller {
+public class Controller {
 
     @GetMapping("{email}")
     public String getIdCard(@PathVariable String email) {
