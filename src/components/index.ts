@@ -5,8 +5,9 @@ export * from "./button";
 export * from "./card-info";
 export * from "./navbar";
 export * from "./id-card";
-export * from "./main-content"
-export * from "./log-in"
-export * from './subtitle'
-export * from './application-steps'
-export * from './tooltip'
+export * from "./main-content";
+export * from "./log-in";
+export * from "./subtitle";
+export * from "./application-steps";
+export * from "./tooltip";
+export * from "./validate-content";
