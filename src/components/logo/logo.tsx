@@ -1,5 +1,3 @@
-import logo from "../../assets/salt-logo-dark.svg";
-
 export const Logo = () => {
-  return <img src={logo} alt="salt logo" />;
+  return <img src={"https://salt.dev/wp-content/uploads/2024/02/salt-logo-dark.svg"} alt="salt logo" />;
 };
