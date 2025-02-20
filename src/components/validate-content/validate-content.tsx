@@ -7,8 +7,7 @@ import { Title } from "../title";
 import { IdCard } from "../id-card";
 import { CtaButton } from "../button";
 import "./validate-content.css";
-import { InfoBox } from "../info-box";
-import { footerInfo } from "../../constants";
+import { Footer } from "../footer";
 
 export const ValidateContent = () => {
   const email = new URLSearchParams(useLocation().search).get("email");
@@ -59,8 +58,7 @@ export const ValidateContent = () => {
           </section>
         </section>
         <section className="validate__section-bottom">
-          <Logo />
-          <InfoBox content={footerInfo} />
+          <Footer />
         </section>
       </div>
     </>
