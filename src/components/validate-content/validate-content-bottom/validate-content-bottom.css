@@ -1,0 +1,16 @@
+.validate__section-bottom {
+  flex-grow: 1;
+  margin-top: 40px;
+  padding: 30px;
+  color: var(--text-tertiery-light);
+  background-image: linear-gradient(
+    107deg,
+    var(--footer-primary) 0%,
+    var(--footer-secondary) 100%
+  );
+}
+@media (min-width: 1024px) {
+  .validate__section-bottom {
+    padding: 30px 27%;
+  }
+}
