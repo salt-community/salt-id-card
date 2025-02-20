@@ -8,6 +8,7 @@ import { IdCard } from "../id-card";
 import { CtaButton } from "../button";
 import "./validate-content.css";
 import { Footer } from "../footer";
+import { ValidateContentTop } from "./validate-content-top";
 
 export const ValidateContent = () => {
   const email = new URLSearchParams(useLocation().search).get("email");
@@ -41,15 +42,7 @@ export const ValidateContent = () => {
     <>
       <div className="validate">
         <section className="validate__content">
-          <section className="validate__section-top">
-            <Logo />
-            <CtaButton
-              variant="primary"
-              onClick={() => window.open("https://salt.dev/contact/", "_blank")}
-            >
-              Contact us
-            </CtaButton>
-          </section>
+          <ValidateContentTop/>
           <section className="validate__section-middle">
             <Title content="This salt id-card is valid" />
             <div className="validate__section-middle__wrapper">

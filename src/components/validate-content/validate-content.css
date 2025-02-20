@@ -8,12 +8,6 @@
   padding: 10px 2%;
 }
 
-.validate__section-top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
 .validate__section-middle {
   justify-items: center;
   background-color: var(--background-secondary-light);
