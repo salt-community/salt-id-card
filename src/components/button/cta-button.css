@@ -10,9 +10,15 @@
 .cta.info {
   background-color: var(--button-secondary);
 }
+.cta.info:hover {
+  background-color: var(--button-secondary-hover);
+}
 
 .cta.primary {
   background-color: var(--button-primary);
+}
+.cta.primary:hover {
+  background-color: var(--button-primary-hover);
 }
 
 .cta:disabled {
