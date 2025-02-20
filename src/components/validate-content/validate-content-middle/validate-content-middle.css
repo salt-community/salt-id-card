@@ -1,0 +1,7 @@
+.validate__section-middle {
+    justify-items: center;
+    background-color: var(--background-secondary-light);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 30px 0px;
+  }
