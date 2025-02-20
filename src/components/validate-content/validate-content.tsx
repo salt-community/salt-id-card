@@ -38,14 +38,22 @@ export const ValidateContent = () => {
   return (
     <>
       <div className="validate">
-        <Logo />
-        <Title content="This salt id-card is valid" />
-        <IdCard userData={userData} />
-        <p>
-          Get in contact with us at Salt
-          
-        </p>
-        <CtaButton variant="primary" onClick={()=>window.open("https://salt.dev/contact/", "_blank")}>Contact</CtaButton>
+        <section className="validate__section-top">
+          <Logo />
+          <CtaButton
+            variant="primary"
+            onClick={() => window.open("https://salt.dev/contact/", "_blank")}
+          >
+            Contact
+          </CtaButton>
+        </section>
+        <section className="validate__section-middel">
+          <Title content="This salt id-card is valid" />
+          <IdCard userData={userData} />
+        </section>
+        <section className="validate__section-bottom">
+          <p>Get in contact with us at Salt</p>
+        </section>
       </div>
     </>
   );
