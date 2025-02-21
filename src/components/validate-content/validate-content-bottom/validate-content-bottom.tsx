@@ -10,7 +10,7 @@ export const ValidateContentBottom = () => {
         variant="primary"
         onClick={() => window.open("https://salt.dev/", "_blank")}
       >
-        Contact us
+        Read more
       </CtaButton>
     </section>
   );
