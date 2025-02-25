@@ -22,7 +22,7 @@ export const IdCard = forwardRef(function IdCard(
         course={userData.course}
         endDate={userData.endDate}
       />
-      <CardFooter email={userData.email} />
+      <CardFooter email={userData.email} uuid={userData.uuid}/>
     </div>
   );
 });

@@ -3,8 +3,9 @@ import "./card-footer.css";
 
 type Props = {
   email: string | undefined;
+  uuid: string;
 };
-export const CardFooter = ({ email }: Props) => {
+export const CardFooter = ({ email, uuid }: Props) => {
   const emailPrefix = email?.split("@")[0];
   const emailSuffix = "@appliedtechnology.se";
   const emailContent = () => {
@@ -25,7 +26,7 @@ export const CardFooter = ({ email }: Props) => {
     <section className="card-section__footer">
       <dl className="card-footer__email">{emailContent()}</dl>
       <QRCode
-        value={VITE_BASE_URL + "/salt-id-card/validate/?email=" + email}
+        value={VITE_BASE_URL + "/salt-id-card/validate/?uuid=" + uuid}
         className="card-footer__qrcode"
       />
     </section>
