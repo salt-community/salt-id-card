@@ -5,6 +5,7 @@ type Props = {
   email: string | undefined;
   uuid: string;
 };
+
 export const CardFooter = ({ email, uuid }: Props) => {
   const emailPrefix = email?.split("@")[0];
   const emailSuffix = "@appliedtechnology.se";
