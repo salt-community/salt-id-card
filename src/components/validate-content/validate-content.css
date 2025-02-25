@@ -9,13 +9,6 @@
   padding: 10px 2%;
 }
 
-.validate__section-middle__wrapper {
-  margin-top: 30px;
-}
-
-.validate__section-middle__wrapper > .card-wrapper {
-  width: 375px;
-}
 
 @media (min-width: 1024px) {
   .validate__content {

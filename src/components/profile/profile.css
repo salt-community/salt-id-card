@@ -1,0 +1,34 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.profile__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+.profile__text > h1 {
+    color: var( --text-primary);
+    font-size: xx-large;
+}
+.profile__text > h3 {
+    color: var(--text-secondary);
+    font-weight: 1;
+    font-size: x-large;
+}
+.profile__img {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+}
+.profile > .cta {
+  padding: 15px;
+}
+.profile__button--svg {
+  display: flex;
+  align-items: center;
+  height: 20px;
+}
