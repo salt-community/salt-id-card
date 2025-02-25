@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { User } from "../../../types";
 import { getSaltCardData } from "../../../api/notion";
 import "./validate-content-middle.css";
+import { Profile } from "../../profile";
 
 export const ValidateContentMiddle = () => {
   const email = new URLSearchParams(useLocation().search).get("email");
@@ -36,7 +37,7 @@ export const ValidateContentMiddle = () => {
     <section className="validate__section-middle">
       <Title content="This salt id-card is valid" />
       <div className="validate__section-middle__wrapper">
-        <IdCard userData={userData} />
+        <Profile userData={userData} />
       </div>
     </section>
   );
