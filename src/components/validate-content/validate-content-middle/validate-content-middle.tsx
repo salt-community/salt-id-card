@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import { IdCard } from "../../id-card";
 import { Title } from "../../title";
 import { useEffect, useState } from "react";
 import { User } from "../../../types";
@@ -35,7 +34,7 @@ export const ValidateContentMiddle = () => {
 
   return (
     <section className="validate__section-middle">
-      <Title content="This salt id-card is valid" />
+      <Title content="Hello! It looks like you've found my ID card." />
       <div className="validate__section-middle__wrapper">
         <Profile userData={userData} />
       </div>
