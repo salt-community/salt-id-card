@@ -11,6 +11,7 @@ export const MainContentRight = () => {
 
   const { user } = useUser();
   const [userData, setUserData] = useState<User>({
+    uuid: "loding...",
     email: "loading...",
     name: "loading...",
     course: "loading...",
@@ -25,7 +26,8 @@ export const MainContentRight = () => {
           user.primaryEmailAddress?.emailAddress
         );
         setUserData({
-          email: user.primaryEmailAddress?.emailAddress,
+          uuid: idCardData.uuid,
+          email: idCardData.email,
           name: idCardData.name,
           course: idCardData.course,
           endDate: idCardData.endDate,
