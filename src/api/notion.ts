@@ -13,7 +13,7 @@ export async function getSaltDataEmail(
     email: "tobias.johansson@appliedtechnology.se",
     image: "https://avatars.githubusercontent.com/TobiasBlankJohansson",
   };
-  const result = await fetch(BACKEND_PATH + email);
+  const result = await fetch(BACKEND_PATH + "email/" + email);
   if (!result.ok) {
     throw new Error();
   }
@@ -31,7 +31,7 @@ export async function getSaltDataPrivateEmail(
     email: "tobias.johansson@appliedtechnology.se",
     image: "https://avatars.githubusercontent.com/TobiasBlankJohansson",
   };
-  const result = await fetch(BACKEND_PATH + privateEmail);
+  const result = await fetch(BACKEND_PATH + "privateemail/" + privateEmail);
   if (!result.ok) {
     throw new Error();
   }
@@ -47,7 +47,7 @@ export async function getSaltDataUuid(uuid: string | undefined): Promise<User> {
     email: "tobias.johansson@appliedtechnology.se",
     image: "https://avatars.githubusercontent.com/TobiasBlankJohansson",
   };
-  const result = await fetch(BACKEND_PATH + uuid);
+  const result = await fetch(BACKEND_PATH + "uuid/" + uuid);
   if (!result.ok) {
     throw new Error();
   }
