@@ -17,18 +17,18 @@ public class Controller {
         this.service = service;
     }
 
-    @GetMapping("{email}")
+    @GetMapping("email/{email}")
     public UserDto getIdCardFromEmail(@PathVariable String email) {
-        return UserDto.toModel(service.getIdCard(email));
+        return UserDto.toModel(service.getIdCardEmail(email));
     }
 
-    @GetMapping("{privateEmail}")
+    @GetMapping("privateEmail/{privateEmail}")
     public UserDto getIdCardFromPrivateEmail(@PathVariable String privateEmail) {
-        return UserDto.toModel(service.getIdCard(privateEmail));
+        return UserDto.toModel(service.getIdCardPrivateEmail(privateEmail));
     }
 
-    @GetMapping("{uuid}")
+    @GetMapping("uuid/{uuid}")
     public UserDto getIdCardFromUuid(@PathVariable UUID uuid) {
-        return UserDto.toModel(service.getIdCard(uuid));
+        return UserDto.toModel(service.getIdCardUuid(uuid));
     }
 }
