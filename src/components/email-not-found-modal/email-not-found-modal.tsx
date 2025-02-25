@@ -8,13 +8,10 @@ type EmailNotFoundModalProps = {
 };
 
 export default function EmailNotFoundModal({
-  isOpen,
   onConfirm,
   onCancel,
 }: EmailNotFoundModalProps) {
   const [privateEmail, setPrivateEmail] = useState("");
-
-  if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">

@@ -5,43 +5,50 @@ import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
 import { getSaltDataEmail } from "../../../api/notion.ts";
+import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-modal.tsx";
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
 
   const { user } = useUser();
-  const [userData, setUserData] = useState<User>({
-    uuid: "loding...",
-    email: "loading...",
-    name: "loading...",
-    course: "loading...",
-    endDate: "loading...",
-    image: "loading...",
-  });
+  const [userData, setUserData] = useState<User>();
+  const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(true);
 
   useEffect(() => {
     const execute = async () => {
       if (user) {
-        const idCardData = await getSaltDataEmail(
-          user.primaryEmailAddress?.emailAddress
-        );
-        setUserData({
-          uuid: idCardData.uuid,
-          email: idCardData.email,
-          name: idCardData.name,
-          course: idCardData.course,
-          endDate: idCardData.endDate,
-          image: idCardData.image,
-        });
+        try {
+          const idCardData = await getSaltDataEmail(
+            user.primaryEmailAddress?.emailAddress
+          );
+          setUserData({
+            uuid: idCardData.uuid,
+            email: idCardData.email,
+            name: idCardData.name,
+            course: idCardData.course,
+            endDate: idCardData.endDate,
+            image: idCardData.image,
+          });
+        } catch (error) {
+          setShowEmailNotFound(() => true);
+        }
       }
     };
     execute();
   }, [user]);
 
   return (
-    userData && (
-      <div className="main-content-right__wrapper">
-        <IdCard userData={userData!} ref={printRef} />
+    <>
+      {showEmailNotFound && (
+        <EmailNotFoundModal
+          onCancel={() => {}}
+          onConfirm={(email) => {}}
+          isOpen
+        />
+      )}
+      {userData && (
+        <div className="main-content-right__wrapper">
+          <IdCard userData={userData!} ref={printRef} />
           <CtaButton
             onClick={() => handlePrint(userData!, printRef)}
             variant="info"
@@ -49,7 +56,8 @@ export const MainContentRight = () => {
           >
             Download my ID
           </CtaButton>
-      </div>
-    )
+        </div>
+      )}
+    </>
   );
 };
