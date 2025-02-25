@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
-import { getSaltDataEmail } from "../../../api/notion.ts";
+import {
+  getSaltDataEmail,
+  getSaltDataPrivateEmail,
+} from "../../../api/notion.ts";
 import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-modal.tsx";
 
 export const MainContentRight = () => {
@@ -37,27 +40,25 @@ export const MainContentRight = () => {
     execute();
   }, [user]);
 
+  const onConfirm = async (privateEmail: string) => {
+    try {
+      const idCardData = await getSaltDataPrivateEmail(privateEmail);
+      setUserData({
+        uuid: idCardData.uuid,
+        email: idCardData.email,
+        name: idCardData.name,
+        course: idCardData.course,
+        endDate: idCardData.endDate,
+        image: idCardData.image,
+      });
+    } catch (error) {
+      setShowEmailNotFound(() => true);
+    }
+  };
+
   return (
     <>
-      {showEmailNotFound && (
-        <EmailNotFoundModal
-          onConfirm={async (privateEmail) => {
-            try {
-              const idCardData = await getSaltDataPrivateEmail(privateEmail);
-              setUserData({
-                uuid: idCardData.uuid,
-                email: idCardData.email,
-                name: idCardData.name,
-                course: idCardData.course,
-                endDate: idCardData.endDate,
-                image: idCardData.image,
-              });
-            } catch (error) {
-              setShowEmailNotFound(() => true);
-            }
-          }}
-        />
-      )}
+      {showEmailNotFound && <EmailNotFoundModal onConfirm={onConfirm} />}
       {userData && (
         <div className="main-content-right__wrapper">
           <IdCard userData={userData!} ref={printRef} />
