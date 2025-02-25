@@ -41,18 +41,21 @@ export const MainContentRight = () => {
   }, [user]);
 
   const onConfirm = async (privateEmail: string) => {
-    try {
-      const idCardData = await getSaltDataPrivateEmail(privateEmail);
-      setUserData({
-        uuid: idCardData.uuid,
-        email: idCardData.email,
-        name: idCardData.name,
-        course: idCardData.course,
-        endDate: idCardData.endDate,
-        image: idCardData.image,
-      });
-    } catch (error) {
-      setShowEmailNotFound(() => true);
+    if (user) {
+      try {
+        const idCardData = await getSaltDataPrivateEmail(privateEmail);
+        setUserData({
+          uuid: idCardData.uuid,
+          email: user.primaryEmailAddress?.emailAddress,
+          name: idCardData.name,
+          course: idCardData.course,
+          endDate: idCardData.endDate,
+          image: idCardData.image,
+        });
+        setShowEmailNotFound(() => false);
+      } catch (error) {
+        setShowEmailNotFound(() => true);
+      }
     }
   };
 
