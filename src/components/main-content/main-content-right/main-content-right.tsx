@@ -41,7 +41,9 @@ export const MainContentRight = () => {
     <>
       {showEmailNotFound && (
         <EmailNotFoundModal
-          onCancel={() => {}}
+          onCancel={() => {
+            Clerk.signOut();
+          }}
           onConfirm={(email) => {}}
           isOpen
         />

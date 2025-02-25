@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./email-not-found-modal.css";
+import { SignOutButton } from "@clerk/clerk-react";
 
 type EmailNotFoundModalProps = {
   isOpen: boolean;
@@ -18,8 +19,9 @@ export default function EmailNotFoundModal({
       <div className="modal">
         <h2>Email Not Found</h2>
         <p>
-          We couldn't find your email. Would you like to try again with your
-          private email?
+          We couldn't find your email in the Notion database. Please speak with
+          your instructor, or would you like to try again with your private
+          email?
         </p>
         <input
           type="email"
@@ -28,7 +30,9 @@ export default function EmailNotFoundModal({
           onChange={(e) => setPrivateEmail(e.target.value)}
         />
         <div className="modal-footer">
-          <button onClick={onCancel}>Cancel</button>
+          <SignOutButton>
+            <button onClick={onCancel}>Cancel</button>
+          </SignOutButton>
           <button onClick={() => onConfirm(privateEmail)}>
             Try Private Email
           </button>
