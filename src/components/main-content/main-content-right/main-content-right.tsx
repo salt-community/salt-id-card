@@ -15,7 +15,6 @@ export const MainContentRight = () => {
     name: "loading...",
     course: "loading...",
     endDate: "loading...",
-    status: "loading...",
     image: "loading...",
   });
 
@@ -30,7 +29,6 @@ export const MainContentRight = () => {
           name: idCardData.name,
           course: idCardData.course,
           endDate: idCardData.endDate,
-          status: idCardData.status,
           image: idCardData.image,
         });
       }

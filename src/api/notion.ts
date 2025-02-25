@@ -10,7 +10,6 @@ export async function getSaltCardData(
     course: "jfs-sthlm-2024-09-06",
     endDate: "2025-06-01",
     email: email,
-    status: "PGP",
     image: "https://avatars.githubusercontent.com/TobiasBlankJohansson",
   };
   const result = await fetch(BACKEND_PATH + email);

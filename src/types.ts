@@ -3,6 +3,5 @@ export type User = {
   course: string;
   endDate: string;
   email: string | undefined;
-  status: string;
   image: string;
 };

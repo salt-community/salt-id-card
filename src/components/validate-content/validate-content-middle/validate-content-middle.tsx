@@ -13,7 +13,6 @@ export const ValidateContentMiddle = () => {
     name: "loading...",
     course: "loading...",
     endDate: "loading...",
-    status: "loading...",
     image: "loading...",
   });
 
@@ -26,7 +25,6 @@ export const ValidateContentMiddle = () => {
           name: idCardData.name,
           course: idCardData.course,
           endDate: idCardData.endDate,
-          status: idCardData.status,
           image: idCardData.image,
         });
       }
