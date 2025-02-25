@@ -2,13 +2,15 @@ import { useLocation } from "react-router-dom";
 import { Title } from "../../title";
 import { useEffect, useState } from "react";
 import { User } from "../../../types";
-import { getSaltCardData } from "../../../api/notion";
+import { getSaltDataUuid } from "../../../api/notion";
 import "./validate-content-middle.css";
 import { Profile } from "../../profile";
 
 export const ValidateContentMiddle = () => {
-  const email = new URLSearchParams(useLocation().search).get("email");
+  const uuid = new URLSearchParams(useLocation().search).get("uuid");
+
   const [userData, setUserData] = useState<User>({
+    uuid: "loading...",
     email: "loading...",
     name: "loading...",
     course: "loading...",
@@ -18,10 +20,11 @@ export const ValidateContentMiddle = () => {
 
   useEffect(() => {
     const execute = async () => {
-      if (email) {
-        const idCardData = await getSaltCardData(email);
+      if (uuid) {
+        const idCardData = await getSaltDataUuid(uuid);
         setUserData({
-          email: email,
+          uuid: idCardData.uuid,
+          email: idCardData.email,
           name: idCardData.name,
           course: idCardData.course,
           endDate: idCardData.endDate,
@@ -30,7 +33,7 @@ export const ValidateContentMiddle = () => {
       }
     };
     execute();
-  }, [email]);
+  }, [uuid]);
 
   return (
     <section className="validate__section-middle">
