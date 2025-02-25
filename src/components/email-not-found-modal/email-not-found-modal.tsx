@@ -3,14 +3,11 @@ import "./email-not-found-modal.css";
 import { SignOutButton } from "@clerk/clerk-react";
 
 type EmailNotFoundModalProps = {
-  isOpen: boolean;
-  onConfirm: (email: string) => void;
-  onCancel: () => void;
+  onConfirm: (email: string) => Promise<void>;
 };
 
 export default function EmailNotFoundModal({
   onConfirm,
-  onCancel,
 }: EmailNotFoundModalProps) {
   const [privateEmail, setPrivateEmail] = useState("");
 
@@ -31,7 +28,7 @@ export default function EmailNotFoundModal({
         />
         <div className="modal-footer">
           <SignOutButton>
-            <button onClick={onCancel}>Cancel</button>
+            <button>Cancel</button>
           </SignOutButton>
           <button onClick={() => onConfirm(privateEmail)}>
             Try Private Email

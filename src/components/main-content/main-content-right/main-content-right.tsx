@@ -41,11 +41,21 @@ export const MainContentRight = () => {
     <>
       {showEmailNotFound && (
         <EmailNotFoundModal
-          onCancel={() => {
-            Clerk.signOut();
+          onConfirm={async (privateEmail) => {
+            try {
+              const idCardData = await getSaltDataPrivateEmail(privateEmail);
+              setUserData({
+                uuid: idCardData.uuid,
+                email: idCardData.email,
+                name: idCardData.name,
+                course: idCardData.course,
+                endDate: idCardData.endDate,
+                image: idCardData.image,
+              });
+            } catch (error) {
+              setShowEmailNotFound(() => true);
+            }
           }}
-          onConfirm={(email) => {}}
-          isOpen
         />
       )}
       {userData && (
