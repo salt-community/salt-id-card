@@ -12,10 +12,9 @@ import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-moda
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
-
   const { user } = useUser();
   const [userData, setUserData] = useState<User>();
-  const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(true);
+  const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(false);
 
   useEffect(() => {
     const execute = async () => {
