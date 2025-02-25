@@ -10,5 +10,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
-    private String name, course, endDate, status, image;
+    private String uuid, name, course, endDate, email, image;
 }
