@@ -11,3 +11,4 @@ export * from "./subtitle";
 export * from "./application-steps";
 export * from "./validate-content";
 export * from "./footer";
+export * from "./profile";
