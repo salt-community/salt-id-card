@@ -6,6 +6,7 @@ export async function getSaltDataEmail(
   email: string | undefined
 ): Promise<User> {
   return {
+    uuid: "4c51571d-7244-478c-9fff-9ec8941f0094",
     name: "Tobias Johansson",
     course: "jfs-sthlm-2026-09-06",
     endDate: "2025-06-01",
@@ -21,6 +22,7 @@ export async function getSaltDataEmail(
 
 export async function getSaltDataUuid(uuid: string | undefined): Promise<User> {
   return {
+    uuid: "4c51571d-7244-478c-9fff-9ec8941f0094",
     name: "Tobias Johansson",
     course: "jfs-sthlm-2024-09-06",
     endDate: "2026-09-06",
