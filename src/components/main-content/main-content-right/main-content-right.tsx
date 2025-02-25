@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
-import { getSaltCardData } from "../../../api/notion.ts";
+import { getSaltDataEmail } from "../../../api/notion.ts";
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ export const MainContentRight = () => {
   useEffect(() => {
     const execute = async () => {
       if (user) {
-        const idCardData = await getSaltCardData(
+        const idCardData = await getSaltDataEmail(
           user.primaryEmailAddress?.emailAddress
         );
         setUserData({
