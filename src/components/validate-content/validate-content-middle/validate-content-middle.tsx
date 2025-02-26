@@ -8,7 +8,6 @@ import { Profile } from "../../profile";
 
 export const ValidateContentMiddle = () => {
   const uuid = new URLSearchParams(useLocation().search).get("uuid");
-
   const [userData, setUserData] = useState<User>({
     uuid: "loading...",
     email: "loading...",
