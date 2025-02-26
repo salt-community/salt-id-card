@@ -1,1 +1,1 @@
-export * from "./useSaltData.ts"
+export * from "./useSaltData.ts";

@@ -1,11 +1,13 @@
 import "./cta-button.css";
 import React from "react";
 
+type Variant = "primary" | "secondary" | "info" | "danger" | "success";
+
 type Props = {
-  onClick?: ()=> void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: React.ReactNode;
-  variant: string,
-  disabled?: boolean
+  variant: Variant;
+  disabled?: boolean;
 };
 
 export const CtaButton = ({ onClick, children, variant, disabled}: Props) => {
