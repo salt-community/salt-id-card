@@ -3,6 +3,7 @@ package salt.dev.saltidcard.service;
 import org.springframework.stereotype.Service;
 import salt.dev.saltidcard.model.User;
 import salt.dev.saltidcard.notionproxy.NotionProxyService;
+import salt.dev.saltidcard.notionproxy.dtos.UserNotionProxyDto;
 
 import java.util.UUID;
 
@@ -25,6 +26,7 @@ public class IdCardService {
     }
 
     public User getIdCardUuid(UUID uuid){
+        UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/uuid/" + uuid.toString());
         return new User("4c51571d-7244-478c-9fff-9ec8941f0094",
                 "Tobias Johansson",
                 "jfs-sthlm-2024-09-06",

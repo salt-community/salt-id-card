@@ -7,7 +7,7 @@ import salt.dev.saltidcard.service.IdCardService;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1/id-card")
+@RequestMapping("api/v1/id-cards")
 @CrossOrigin
 public class Controller {
 

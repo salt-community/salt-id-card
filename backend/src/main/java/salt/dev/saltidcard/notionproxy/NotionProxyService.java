@@ -15,8 +15,8 @@ public class NotionProxyService {
     public NotionProxyService(RestClient.Builder builder,
                             @Value("${NOTION_PROXY_API_KEY}") String API_KEY,
                             @Value("${NOTION_PROXY_API_KEY_HEADER}") String API_KEY_HEADER,
-                            @Value("${NOTION_URL}") String NOTION_URL) {
-        this.restClient = builder.baseUrl(NOTION_URL).build();
+                            @Value("${NOTION_PROXY_URL}") String NOTION_PROXY_URL) {
+        this.restClient = builder.baseUrl(NOTION_PROXY_URL).build();
         this.API_KEY = API_KEY;
         this.API_KEY_HEADER = API_KEY_HEADER;
     }
