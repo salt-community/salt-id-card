@@ -5,7 +5,7 @@ export const LogInLeft = () => {
   return (
     <section className="logged-out_left">
       <Logo />
-      <Subtitle content="Sign in to get ID card" />
+      <Subtitle>"Sign in to get ID card"</Subtitle>
       <InfoBox>Use your @appliedtechnology.se email.</InfoBox>
     </section>
   );

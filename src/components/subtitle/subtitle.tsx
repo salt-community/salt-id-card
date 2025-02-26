@@ -1,10 +1,8 @@
 import "./subtitle.css";
 
 type Props = {
-  content: string;
+  children: React.ReactNode;
 };
-export const Subtitle = ({ content }: Props) => {
-  return <h3>{content}</h3>;
+export const Subtitle = ({ children }: Props) => {
+  return <h3>{children}</h3>;
 };
-
-
