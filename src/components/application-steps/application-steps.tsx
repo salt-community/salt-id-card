@@ -1,18 +1,14 @@
-import {Subtitle} from "../../components";
-import {listOfSteps} from "../../constants.ts";
-
+import { Subtitle } from "../../components";
+import { listOfSteps } from "../../constants.ts";
 
 export const ApplicationSteps = () => {
   return (
     <>
-      <Subtitle content="Application steps:"/>
+      <Subtitle>Application steps:</Subtitle>
       <ol>
-        {listOfSteps.map(
-          (element, index) => {
-            return (
-              <li key={index}>{element}</li>
-            )
-          })}
+        {listOfSteps.map((element, index) => {
+          return <li key={index}>{element}</li>;
+        })}
       </ol>
     </>
   );

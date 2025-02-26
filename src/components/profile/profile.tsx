@@ -14,7 +14,7 @@ export function Profile({ userData }: Props) {
       <img src={userData.image} alt="Id-card image" className="profile__img" />
       <section className="profile__text">
         <Title content={userData.name}></Title>
-        <Subtitle content={userData.course}></Subtitle>
+        <Subtitle>{userData.course}</Subtitle>
       </section>
       <CtaButton
         variant="primary"

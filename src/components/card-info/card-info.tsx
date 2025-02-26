@@ -6,7 +6,7 @@ export const CardInfo = () => {
   const { user } = useUser();
   return (
     <div className="card-info__container">
-      {user && <Subtitle content={`Hi, ${user.firstName}!`} />}
+      {user && <Subtitle>{`Hi, ${user.firstName}!`}</Subtitle>}
       <main className="card-info-main">
         <p>
           This card can be used to apply for Github Student Developer Pack. You
