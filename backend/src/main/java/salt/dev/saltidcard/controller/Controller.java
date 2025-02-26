@@ -22,11 +22,6 @@ public class Controller {
         return UserDto.toModel(service.getIdCardEmail(email));
     }
 
-    @GetMapping("privateEmail/{privateEmail}")
-    public UserDto getIdCardFromPrivateEmail(@PathVariable String privateEmail) {
-        return UserDto.toModel(service.getIdCardPrivateEmail(privateEmail));
-    }
-
     @GetMapping("uuid/{uuid}")
     public UserDto getIdCardFromUuid(@PathVariable UUID uuid) {
         return UserDto.toModel(service.getIdCardUuid(uuid));
