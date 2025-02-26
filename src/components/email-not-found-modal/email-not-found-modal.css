@@ -41,19 +41,3 @@
     margin-top: 15px;
   }
   
-  .modal-footer button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .modal-footer button:first-child {
-    background: #ccc;
-  }
-  
-  .modal-footer button:last-child {
-    background: #007bff;
-    color: white;
-  }
-  

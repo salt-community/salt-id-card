@@ -18,7 +18,7 @@ export const useSaltData = (email?: string) => {
           endDate: data.endDate,
           image: data.image,
         });
-        setError(false);
+        setError(true);
       } catch {
         setError(true);
       }

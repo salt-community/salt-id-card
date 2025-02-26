@@ -1,3 +1,4 @@
+import { CtaButton } from "../button";
 import "./email-not-found-modal.css";
 import { SignOutButton } from "@clerk/clerk-react";
 
@@ -18,9 +19,9 @@ export default function EmailNotFoundModal({
         </p>
         <div className="modal-footer">
           <SignOutButton>
-            <button>Cancel</button>
+            <CtaButton variant="info">Cancel</CtaButton>
           </SignOutButton>
-          <button onClick={() => onConfirm()}>Try again</button>
+          <CtaButton variant="primary" onClick={() => onConfirm()}>Try again</CtaButton>
         </div>
       </div>
     </div>

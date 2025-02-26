@@ -11,7 +11,6 @@ type Props = {
 };
 
 export const CtaButton = ({ onClick, children, variant, disabled}: Props) => {
-
   return (
     <button className={`cta ${variant}`} onClick={onClick} disabled={disabled}>
       {children}

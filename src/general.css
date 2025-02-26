@@ -13,8 +13,16 @@
   --footer-secondary: #0f2d45;
   --button-primary: #ff7961;
   --button-primary-hover: #e86654;
-  --button-secondary: #1875ff;
-  --button-secondary-hover: #0f5acc;
+  --button-secondary: #6c757d;
+  --button-secondary-hover: #5a6268;
+  --button-info: #17a2b8;
+  --button-info-hover: #138996;
+  --button-danger: #dc3545;
+  --button-danger-hover: #c82333;
+  --button-success: #28a745;
+  --button-success-hover: #218838;
+  --button-disabled: #e0e0e0;
+  --button-disabled-text: #a1a1a1;
   --button-disabled: #918f8d;
   --border-primary: #ebebeb;
   --border-secondary: #918f8d;

@@ -7,21 +7,49 @@
   border: none;
 }
 
-.cta.info {
-  background-color: var(--button-secondary);
-}
-.cta.info:hover {
-  background-color: var(--button-secondary-hover);
-}
-
 .cta.primary {
   background-color: var(--button-primary);
 }
+
 .cta.primary:hover {
   background-color: var(--button-primary-hover);
 }
 
-.cta:disabled {
+.cta.secondary {
+  background-color: var(--button-secondary);
+}
+
+.cta.secondary:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.cta.info {
+  background-color: var(--button-info);
+}
+
+.cta.info:hover {
+  background-color: var(--button-info-hover);
+}
+
+.cta.danger {
+  background-color: var(--button-danger);
+}
+
+.cta.danger:hover {
+  background-color: var(--button-danger-hover);
+}
+
+.cta.success {
+  background-color: var(--button-success);
+}
+
+.cta.success:hover {
+  background-color: var(--button-success-hover);
+}
+
+.cta:disabled,
+.cta.disabled {
   background-color: var(--button-disabled);
-  cursor: no-drop;
+  cursor: not-allowed;
+  color: var(--button-disabled-text);
 }
