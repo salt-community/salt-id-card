@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { User } from "../../types";
 import { getSaltDataEmail } from "../../api/notion";
 
-export const useSaltData = (email?: string) => {
+export const useSaltDataEmail = (email?: string) => {
   const [userData, setUserData] = useState<User | null>(null);
   const [error, setError] = useState<boolean>(false);
 

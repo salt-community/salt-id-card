@@ -3,13 +3,13 @@ import { handlePrint } from "../../../utils/utils.ts";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-modal.tsx";
-import { useSaltData } from "../../../hooks/index.ts";
+import { useSaltDataEmail } from "../../../hooks/index.ts";
 import { useEffect, useRef } from "react";
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
   const { user } = useUser();
-  const { userData, error, getSaltData } = useSaltData(
+  const { userData, error, getSaltData } = useSaltDataEmail(
     user?.primaryEmailAddress?.emailAddress
   );
 
