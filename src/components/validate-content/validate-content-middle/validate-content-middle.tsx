@@ -5,7 +5,7 @@ import { Profile } from "../../profile";
 import { useSaltDataId } from "../../../hooks/use-salt-data-id";
 
 export const ValidateContentMiddle = () => {
-  const { userData, error, getSaltData } = useSaltDataId();
+  const { userData, getSaltData } = useSaltDataId();
   useEffect(() => {
     getSaltData();
   }, [getSaltData]);

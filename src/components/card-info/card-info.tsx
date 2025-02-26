@@ -1,5 +1,5 @@
 import "./card-info.css";
-import { ApplicationSteps, Subtitle } from "../../components";
+import { ApplicationSteps, InfoBox, Subtitle } from "../../components";
 import { useUser } from "@clerk/clerk-react";
 
 export const CardInfo = () => {
@@ -8,7 +8,7 @@ export const CardInfo = () => {
     <div className="card-info__container">
       {user && <Subtitle>{`Hi, ${user.firstName}!`}</Subtitle>}
       <main className="card-info-main">
-        <p>
+        <InfoBox>
           This card can be used to apply for Github Student Developer Pack. You
           can sign up for it {""}
           <a
@@ -18,7 +18,7 @@ export const CardInfo = () => {
             here
           </a>
           .
-        </p>
+        </InfoBox>
         <ApplicationSteps />
       </main>
     </div>
