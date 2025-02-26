@@ -13,30 +13,7 @@ export const MainContentRight = () => {
   const [userData, setUserData] = useState<User>();
   const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(false);
 
-  useEffect(() => {
-    const execute = async () => {
-      if (user) {
-        try {
-          const idCardData = await getSaltDataEmail(
-            user.primaryEmailAddress?.emailAddress
-          );
-          setUserData({
-            uuid: idCardData.uuid,
-            email: idCardData.email,
-            name: idCardData.name,
-            course: idCardData.course,
-            endDate: idCardData.endDate,
-            image: idCardData.image,
-          });
-        } catch (error) {
-          setShowEmailNotFound(() => true);
-        }
-      }
-    };
-    execute();
-  }, [user]);
-
-  const onConfirm = async () => {
+  const getSaltData = async () => {
     if (user) {
       try {
         const idCardData = await getSaltDataEmail(
@@ -56,9 +33,14 @@ export const MainContentRight = () => {
       }
     }
   };
+
+  useEffect(() => {
+    getSaltData();
+  }, [user]);
+
   return (
     <>
-      {showEmailNotFound && <EmailNotFoundModal onConfirm={onConfirm} />}
+      {showEmailNotFound && <EmailNotFoundModal onConfirm={getSaltData} />}
       {userData && (
         <div className="main-content-right__wrapper">
           <IdCard userData={userData!} ref={printRef} />
