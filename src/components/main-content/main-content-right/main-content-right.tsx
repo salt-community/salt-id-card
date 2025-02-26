@@ -1,6 +1,6 @@
 import { IdCard, CtaButton } from "../../../components";
 import { handlePrint } from "../../../utils/utils.ts";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
@@ -13,7 +13,7 @@ export const MainContentRight = () => {
   const [userData, setUserData] = useState<User>();
   const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(false);
 
-  const getSaltData = async () => {
+  const getSaltData = useCallback(async () => {
     if (user) {
       try {
         const idCardData = await getSaltDataEmail(
@@ -32,11 +32,11 @@ export const MainContentRight = () => {
         setShowEmailNotFound(() => true);
       }
     }
-  };
+  }, [user]);
 
   useEffect(() => {
     getSaltData();
-  }, [user]);
+  }, [getSaltData]);
 
   return (
     <>
