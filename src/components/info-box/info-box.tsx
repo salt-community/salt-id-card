@@ -1,9 +1,7 @@
-type Props={
-  content?: string
-}
+type Props = {
+  children: React.ReactNode;
+};
 
-export const InfoBox = ({content}:Props) => {
-  return (
-    <p>{content}</p>
-  );
+export const InfoBox = ({ children }: Props) => {
+  return <p>{children}</p>;
 };
