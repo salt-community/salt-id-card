@@ -4,10 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
 import { User } from "../../../types.ts";
-import {
-  getSaltDataEmail,
-  getSaltDataPrivateEmail,
-} from "../../../api/notion.ts";
+import { getSaltDataEmail } from "../../../api/notion.ts";
 import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-modal.tsx";
 
 export const MainContentRight = () => {
@@ -39,13 +36,15 @@ export const MainContentRight = () => {
     execute();
   }, [user]);
 
-  const onConfirm = async (privateEmail: string) => {
+  const onConfirm = async () => {
     if (user) {
       try {
-        const idCardData = await getSaltDataPrivateEmail(privateEmail);
+        const idCardData = await getSaltDataEmail(
+          user.primaryEmailAddress?.emailAddress
+        );
         setUserData({
           uuid: idCardData.uuid,
-          email: user.primaryEmailAddress?.emailAddress,
+          email: idCardData.email,
           name: idCardData.name,
           course: idCardData.course,
           endDate: idCardData.endDate,
@@ -57,7 +56,6 @@ export const MainContentRight = () => {
       }
     }
   };
-
   return (
     <>
       {showEmailNotFound && <EmailNotFoundModal onConfirm={onConfirm} />}
