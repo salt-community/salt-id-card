@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <>
       <Logo />
-      <InfoBox content={footerInfo} />
+      <InfoBox>{footerInfo}</InfoBox>
     </>
   );
 };
