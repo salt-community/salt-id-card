@@ -3,7 +3,7 @@ import { getSaltDataUuid } from "../../api/notion";
 import { useLocation } from "react-router-dom";
 import { User } from "../../types";
 
-export const useSaltData = () => {
+export const useSaltDataId = () => {
   const uuid = new URLSearchParams(useLocation().search).get("uuid");
   const [userData, setUserData] = useState<User | null>(null);
   const [error, setError] = useState<boolean>(false);
