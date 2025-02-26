@@ -1,9 +1,11 @@
 package salt.dev.saltidcard.notionproxy;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import salt.dev.saltidcard.notionproxy.dtos.UserNotionProxyDto;
 
+@Component
 public class NotionProxyService {
 
     private final RestClient restClient;
@@ -19,12 +21,12 @@ public class NotionProxyService {
         this.API_KEY_HEADER = API_KEY_HEADER;
     }
 
-    public JsonNode fetchUser(String uri) {
+    public UserNotionProxyDto fetchUser(String uri) {
         return restClient
                 .get()
                 .uri(uri)
                 .header(API_KEY_HEADER, API_KEY)
                 .retrieve()
-                .body(JsonNode.class);
+                .body(UserNotionProxyDto.class);
     }
 }
