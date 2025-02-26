@@ -20,7 +20,7 @@ export default function EmailNotFoundModal({
           <SignOutButton>
             <button>Cancel</button>
           </SignOutButton>
-          <button onClick={() => onConfirm()}>Try Private Email</button>
+          <button onClick={() => onConfirm()}>Try again</button>
         </div>
       </div>
     </div>
