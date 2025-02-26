@@ -1,38 +1,17 @@
 import { IdCard, CtaButton } from "../../../components";
 import { handlePrint } from "../../../utils/utils.ts";
-import { useCallback, useEffect, useRef, useState } from "react";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
-import { User } from "../../../types.ts";
-import { getSaltDataEmail } from "../../../api/notion.ts";
 import EmailNotFoundModal from "../../email-not-found-modal/email-not-found-modal.tsx";
+import { useSaltData } from "../../../hooks/index.ts";
+import { useEffect, useRef } from "react";
 
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
   const { user } = useUser();
-  const [userData, setUserData] = useState<User>();
-  const [showEmailNotFound, setShowEmailNotFound] = useState<boolean>(false);
-
-  const getSaltData = useCallback(async () => {
-    if (user) {
-      try {
-        const idCardData = await getSaltDataEmail(
-          user.primaryEmailAddress?.emailAddress
-        );
-        setUserData({
-          uuid: idCardData.uuid,
-          email: idCardData.email,
-          name: idCardData.name,
-          course: idCardData.course,
-          endDate: idCardData.endDate,
-          image: idCardData.image,
-        });
-        setShowEmailNotFound(() => false);
-      } catch (error) {
-        setShowEmailNotFound(() => true);
-      }
-    }
-  }, [user]);
+  const { userData, error, getSaltData } = useSaltData(
+    user?.primaryEmailAddress?.emailAddress
+  );
 
   useEffect(() => {
     getSaltData();
@@ -40,7 +19,7 @@ export const MainContentRight = () => {
 
   return (
     <>
-      {showEmailNotFound && <EmailNotFoundModal onConfirm={getSaltData} />}
+      {error && <EmailNotFoundModal onConfirm={getSaltData} />}
       {userData && (
         <div className="main-content-right__wrapper">
           <IdCard userData={userData!} ref={printRef} />
