@@ -22,10 +22,11 @@ public class IdCardService {
         //UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/email/" + email);
         UserNotionProxyDto userDto = new UserNotionProxyDto(
                 "02e93524-a7a9-4f63-9e2e-aa5b729ce398",
-                "Andreas Lundmark",
-                "jfs-sthlm-2024-09-06",
-                "tobias.johansson@appliedtechnology.se",
-                "https://github.com/andreasErikLundmark");
+                "John Doe",
+                "jfs-nyc-2025-05-12",
+                "john.doe@example.com",
+                "https://github.com/johndoe"
+        );
         return createUserFromNotionDto(userDto);
     }
 
@@ -44,7 +45,7 @@ public class IdCardService {
                 getGitHubAvatarUrl(userDto.getGitHub()));
     }
 
-    private static String getEndDate(UserNotionProxyDto userDto) {
+    public static String getEndDate(UserNotionProxyDto userDto) {
         Pattern pattern = Pattern.compile("(\\d{4})-(\\d{2})-(\\d{2})");
         Matcher matcher = pattern.matcher(userDto.getCourse());
         if(!matcher.find()){
