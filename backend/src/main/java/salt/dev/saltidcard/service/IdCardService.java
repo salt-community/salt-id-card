@@ -19,7 +19,7 @@ public class IdCardService {
     }
 
     public User getIdCardEmail(String email){
-        return new User("4c51571d-7244-478c-9fff-9ec8941f0094",
+        return new User("02e93524-a7a9-4f63-9e2e-aa5b729ce398",
                 "Tobias Johansson",
                 "jfs-sthlm-2024-09-06",
                 "2026-09-06",
@@ -42,6 +42,13 @@ public class IdCardService {
                 userDto.getEmail(),
                 getGitHubAvatarUrl(userDto.getGitHub()));
 
+    }
+
+    public static String ifNotEmptyReturn(String input, String errorMessage){
+        if(input == null || input.equals("null")){
+            throw new IllegalArgumentException(errorMessage);
+        }
+        return input;
     }
 
     public static String getGitHubAvatarUrl(String profileUrl) {
