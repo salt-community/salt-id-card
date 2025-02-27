@@ -15,10 +15,9 @@ export default function EmailNotFoundModal({
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <h2>Email Not Found</h2>
+        <h2>Something when wrong</h2>
         <InfoBox>
-          {errorMessage}. Please speak with
-          your instructor.
+          {errorMessage}. Please speak with your instructor to verify if it is correct in Notion.
         </InfoBox>
         <div className="modal-footer">
           <SignOutButton>

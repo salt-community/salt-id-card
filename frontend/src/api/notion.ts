@@ -7,7 +7,8 @@ export async function getSaltDataEmail(
 ): Promise<User> {
   const result = await fetch(BACKEND_PATH + "/api/v1/id-cards/email/" + email);
   if (!result.ok) {
-    throw new Error();
+    const errorMessage = await result.text();
+    throw new Error(errorMessage);
   }
   return (await result.json()) as User;
   return {

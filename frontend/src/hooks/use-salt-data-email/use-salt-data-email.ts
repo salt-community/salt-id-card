@@ -5,7 +5,7 @@ import { getSaltDataEmail } from "../../api/notion";
 export const useSaltDataEmail = (email?: string) => {
   const [userData, setUserData] = useState<User | null>(null);
   const [error, setError] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>();
+  const [message, setMessage] = useState<string>("");
 
   const getSaltData = useCallback(async () => {
     if (email) {

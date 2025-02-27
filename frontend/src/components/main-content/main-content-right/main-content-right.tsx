@@ -9,7 +9,7 @@ import { useEffect, useRef } from "react";
 export const MainContentRight = () => {
   const printRef = useRef<HTMLDivElement>(null);
   const { user } = useUser();
-  const { userData, error, getSaltData } = useSaltDataEmail(
+  const { userData, error, message, getSaltData } = useSaltDataEmail(
     user?.primaryEmailAddress?.emailAddress
   );
 
@@ -19,7 +19,9 @@ export const MainContentRight = () => {
 
   return (
     <>
-      {error && <EmailNotFoundModal onConfirm={getSaltData} />}
+      {error && (
+        <EmailNotFoundModal errorMessage={message} onConfirm={getSaltData} />
+      )}
       {userData && (
         <div className="main-content-right__wrapper">
           <IdCard userData={userData!} ref={printRef} />
