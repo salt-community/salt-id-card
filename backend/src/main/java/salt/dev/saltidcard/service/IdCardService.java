@@ -29,6 +29,10 @@ public class IdCardService {
 
     public User getIdCardUuid(UUID uuid) {
         UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/uuid/" + uuid.toString());
+        return createUserFromNotionDto(userDto);
+    }
+
+    private static User createUserFromNotionDto(UserNotionProxyDto userDto) {
         return new User(
                 ifNotEmptyReturn(userDto.getUuid(), "Invalid uuid"),
                 ifNotEmptyReturn(userDto.getName(), "Invalid name"),
@@ -36,7 +40,6 @@ public class IdCardService {
                 getEndDate(userDto),
                 ifNotEmptyReturn(userDto.getEmail(), "Invalid email"),
                 getGitHubAvatarUrl(userDto.getGitHub()));
-
     }
 
     private static String getEndDate(UserNotionProxyDto userDto) {
@@ -60,9 +63,7 @@ public class IdCardService {
         if (profileUrl == null || !profileUrl.startsWith("https://github.com/")) {
             throw new IllegalArgumentException("Invalid GitHub profile URL");
         }
-
         String username = profileUrl.replace("https://github.com/", "").trim();
-
         return "https://avatars.githubusercontent.com/" + username;
     }
 }
