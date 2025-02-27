@@ -5,7 +5,7 @@ const BACKEND_PATH = import.meta.env.VITE_BACKEND_PATH;
 export async function getSaltDataEmail(
   email: string | undefined
 ): Promise<User> {
-  const result = await fetch(BACKEND_PATH + "email/" + email);
+  const result = await fetch(BACKEND_PATH + "/api/v1/id-cards/email/" + email);
   if (!result.ok) {
     throw new Error();
   }
@@ -21,7 +21,7 @@ export async function getSaltDataEmail(
 }
 
 export async function getSaltDataUuid(uuid: string | undefined): Promise<User> {
-  const result = await fetch(BACKEND_PATH + "uuid/" + uuid);
+  const result = await fetch(BACKEND_PATH + "/api/v1/id-cards/uuid/" + uuid);
   if (!result.ok) {
     throw new Error();
   }

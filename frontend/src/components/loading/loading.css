@@ -6,8 +6,8 @@
 }
 
 .spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #3498db;
+  border: 8px solid var(--loading-secondary);
+  border-top: 8px solid var(--loading-primary);
   border-radius: 50%;
   width: 100px;
   height: 100px;

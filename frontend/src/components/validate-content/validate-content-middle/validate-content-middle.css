@@ -5,7 +5,16 @@
   border-radius: 20px;
   padding: 30px 20px;
 }
-.validate__section-middle > h1 {
+.validate__section-middle__wrapper > h1 {
   font-size: x-large;
   color: var(--text-primary);
+}
+
+.loading-container {
+  height: 400px;
+}
+
+.loading-container > .spinner {
+  width: 150px;
+  height: 150px;
 }
