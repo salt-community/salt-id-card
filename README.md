@@ -62,6 +62,8 @@ Fetches user ID card details using a unique identifier (UUID).
 | `404 Not Found`   | User not found |
 | `502 Bad Gateway` | Invalid value from Notion Proxy |
 
+#### Example Response: (200 OK)
+
 ```json
 {
   "uuid": "123e4567-e89b-12d3-a456-426614174000",
