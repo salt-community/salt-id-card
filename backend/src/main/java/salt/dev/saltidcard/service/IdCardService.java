@@ -27,21 +27,26 @@ public class IdCardService {
                 "https://avatars.githubusercontent.com/TobiasBlankJohansson");
     }
 
-    public User getIdCardUuid(UUID uuid){
+    public User getIdCardUuid(UUID uuid) {
         UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/uuid/" + uuid.toString());
-
-        Pattern pattern = Pattern.compile("(\\d{4})-(\\d{2})-(\\d{2})");
-        Matcher matcher = pattern.matcher(userDto.getCourse());
-        matcher.find();
-        int year = Integer.parseInt(matcher.group(1)) + 2;
-        String endDate = year + "-" + matcher.group(2) + "-" + matcher.group(3);
-        return new User(userDto.getUuid(),
-                userDto.getName(),
-                userDto.getCourse(),
-                endDate,
-                userDto.getEmail(),
+        return new User(
+                ifNotEmptyReturn(userDto.getUuid(), "Invalid uuid"),
+                ifNotEmptyReturn(userDto.getName(), "Invalid name"),
+                ifNotEmptyReturn(userDto.getCourse(), "Invalid course"),
+                getEndDate(userDto),
+                ifNotEmptyReturn(userDto.getEmail(), "Invalid email"),
                 getGitHubAvatarUrl(userDto.getGitHub()));
 
+    }
+
+    private static String getEndDate(UserNotionProxyDto userDto) {
+        Pattern pattern = Pattern.compile("(\\d{4})-(\\d{2})-(\\d{2})");
+        Matcher matcher = pattern.matcher(userDto.getCourse());
+        if(!matcher.find()){
+            throw new IllegalArgumentException("Invalid end date");
+        }
+        int year = Integer.parseInt(matcher.group(1)) + 2;
+        return year + "-" + matcher.group(2) + "-" + matcher.group(3);
     }
 
     public static String ifNotEmptyReturn(String input, String errorMessage){
