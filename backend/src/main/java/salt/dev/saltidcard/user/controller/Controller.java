@@ -1,8 +1,8 @@
-package salt.dev.saltidcard.controller;
+package salt.dev.saltidcard.user.controller;
 
 import org.springframework.web.bind.annotation.*;
-import salt.dev.saltidcard.controller.dtos.UserDto;
-import salt.dev.saltidcard.service.IdCardService;
+import salt.dev.saltidcard.user.controller.dtos.UserDto;
+import salt.dev.saltidcard.user.service.IdCardService;
 
 import java.util.UUID;
 

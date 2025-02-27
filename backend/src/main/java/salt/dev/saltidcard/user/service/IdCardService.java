@@ -1,7 +1,7 @@
-package salt.dev.saltidcard.service;
+package salt.dev.saltidcard.user.service;
 
 import org.springframework.stereotype.Service;
-import salt.dev.saltidcard.model.User;
+import salt.dev.saltidcard.user.model.User;
 import salt.dev.saltidcard.notionproxy.NotionProxyService;
 import salt.dev.saltidcard.notionproxy.dtos.UserNotionProxyDto;
 

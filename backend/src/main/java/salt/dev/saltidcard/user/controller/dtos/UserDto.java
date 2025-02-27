@@ -1,6 +1,6 @@
-package salt.dev.saltidcard.controller.dtos;
+package salt.dev.saltidcard.user.controller.dtos;
 
-import salt.dev.saltidcard.model.User;
+import salt.dev.saltidcard.user.model.User;
 
 public record UserDto(
         String uuid,

@@ -1,4 +1,4 @@
-package salt.dev.saltidcard.model;
+package salt.dev.saltidcard.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
