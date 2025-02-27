@@ -11,3 +11,9 @@
 .clipboard-tooltip {
   width: fit-content;
 }
+
+.main-content-right__wrapper > .loading-container {
+  width: 400px;
+  height: 250px;
+  padding: 20px;
+}

@@ -13,11 +13,11 @@
   margin-top: 30px;
 }
 
-.loading-container {
+.validate__section-middle > .loading-container {
   height: 400px;
 }
 
-.loading-container > .spinner {
+.validate__section-middle > .loading-container > .spinner {
   width: 150px;
   height: 150px;
 }

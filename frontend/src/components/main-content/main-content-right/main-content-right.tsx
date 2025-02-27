@@ -1,4 +1,4 @@
-import { IdCard, CtaButton } from "../../../components";
+import { IdCard, CtaButton, Loading } from "../../../components";
 import { handlePrint } from "../../../utils/utils.ts";
 import "./main-content-right.css";
 import { useUser } from "@clerk/clerk-react";
@@ -17,23 +17,29 @@ export const MainContentRight = () => {
     getSaltData();
   }, [getSaltData]);
 
-  return (
-    <>
-      {error && (
+  const renderContent = () => {
+    if (error) {
+      return (
         <EmailNotFoundModal errorMessage={message} onConfirm={getSaltData} />
-      )}
-      {userData && (
-        <div className="main-content-right__wrapper">
-          <IdCard userData={userData!} ref={printRef} />
+      );
+    }
+
+    if (userData) {
+      return (
+        <>
+          <IdCard userData={userData} ref={printRef} />
           <CtaButton
-            onClick={() => handlePrint(userData!, printRef)}
+            onClick={() => handlePrint(userData, printRef)}
             variant="info"
-            disabled={false}
           >
             Download my ID
           </CtaButton>
-        </div>
-      )}
-    </>
-  );
+        </>
+      );
+    }
+
+    return <Loading />;
+  };
+
+  return <div className="main-content-right__wrapper">{renderContent()}</div>;
 };
