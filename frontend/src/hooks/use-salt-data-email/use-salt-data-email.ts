@@ -5,6 +5,7 @@ import { getSaltDataEmail } from "../../api/notion";
 export const useSaltDataEmail = (email?: string) => {
   const [userData, setUserData] = useState<User | null>(null);
   const [error, setError] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>();
 
   const getSaltData = useCallback(async () => {
     if (email) {
@@ -19,11 +20,12 @@ export const useSaltDataEmail = (email?: string) => {
           image: data.image,
         });
         setError(false);
-      } catch {
+      } catch (error) {
         setError(true);
+        setMessage((error as Error).message);
       }
     }
   }, [email]);
 
-  return { userData, error, getSaltData };
+  return { userData, error, message, getSaltData };
 };
