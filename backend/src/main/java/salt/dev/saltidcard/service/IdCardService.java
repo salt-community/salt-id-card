@@ -19,12 +19,14 @@ public class IdCardService {
     }
 
     public User getIdCardEmail(String email){
-        return new User("02e93524-a7a9-4f63-9e2e-aa5b729ce398",
-                "Tobias Johansson",
+        //UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/email/" + email);
+        UserNotionProxyDto userDto = new UserNotionProxyDto(
+                "02e93524-a7a9-4f63-9e2e-aa5b729ce398",
+                "Andreas Lundmark",
                 "jfs-sthlm-2024-09-06",
-                "2026-09-06",
                 "tobias.johansson@appliedtechnology.se",
-                "https://avatars.githubusercontent.com/TobiasBlankJohansson");
+                "https://github.com/andreasErikLundmark");
+        return createUserFromNotionDto(userDto);
     }
 
     public User getIdCardUuid(UUID uuid) {
