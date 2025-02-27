@@ -9,6 +9,9 @@
   font-size: x-large;
   color: var(--text-primary);
 }
+.validate__section-middle__wrapper > p {
+  margin-top: 30px;
+}
 
 .loading-container {
   height: 400px;
@@ -18,3 +21,4 @@
   width: 150px;
   height: 150px;
 }
+
