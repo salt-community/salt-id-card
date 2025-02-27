@@ -13,3 +13,4 @@ export * from "./validate-content";
 export * from "./footer";
 export * from "./profile";
 export * from "./email-not-found-modal";
+export * from "./loading";
