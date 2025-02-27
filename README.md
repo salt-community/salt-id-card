@@ -75,7 +75,7 @@ Fetches user ID card details using a unique identifier (UUID).
 }
 ```
 
-### 2. Retrieve ID Card by Email
+### 📧 Retrieve ID Card by Email
 
 **Endpoint**: `/api/v1/id-cards/email/{email}`  
 **Method**: `GET`  
