@@ -10,4 +10,7 @@ class IdCardServiceConstants {
     public static final String NULL = "null";
     public static final String GITHUB_URL = "https://github.com/";
     public static final String IMAGE_URL = "https://avatars.githubusercontent.com/";
+
+    public static final String NOTION_UUID_PATH = "id-cards/uuid/";
+    public static final String NOTION_EMAIL_PATH = "id-cards/uuid/";
 }

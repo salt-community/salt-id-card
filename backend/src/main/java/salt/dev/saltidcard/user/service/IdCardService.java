@@ -20,7 +20,7 @@ public class IdCardService {
     }
 
     public User getIdCardEmail(String email){
-        //UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/email/" + email);
+        //UserNotionProxyDto userDto = notionProxyService.fetchUser(NOTION_EMAIL_PATH + email);
         UserNotionProxyDto userDto = new UserNotionProxyDto(
                 "02e93524-a7a9-4f63-9e2e-aa5b729ce398",
                 "John Doe",
@@ -32,7 +32,7 @@ public class IdCardService {
     }
 
     public User getIdCardUuid(UUID uuid) {
-        UserNotionProxyDto userDto = notionProxyService.fetchUser("id-cards/uuid/" + uuid.toString());
+        UserNotionProxyDto userDto = notionProxyService.fetchUser(NOTION_UUID_PATH + uuid.toString());
         return createUserFromNotionDto(userDto);
     }
 
