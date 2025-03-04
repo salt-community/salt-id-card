@@ -40,7 +40,7 @@ public class IdCardService {
                 ifNotEmptyReturn(userDto.getUuid(), "Invalid uuid"),
                 ifNotEmptyReturn(userDto.getName(), "Invalid name"),
                 ifNotEmptyReturn(userDto.getCourse(), "Invalid course"),
-                getEndDate(userDto),
+                getEndDate(userDto.getCourse()),
                 ifNotEmptyReturn(userDto.getEmail(), "Invalid email"),
                 getGitHubAvatarUrl(userDto.getGitHub()));
     }

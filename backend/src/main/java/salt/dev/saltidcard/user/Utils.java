@@ -1,7 +1,5 @@
 package salt.dev.saltidcard.user;
 
-import salt.dev.saltidcard.notionproxy.dtos.UserNotionProxyDto;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

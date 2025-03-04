@@ -95,7 +95,7 @@ class IdCardServiceTest {
 
     @Test
     void getEndDateValid() {
-        String endDate = getEndDate(mockUserDto);
+        String endDate = getEndDate(mockUserDto.getCourse());
         assertEquals("2027-05-12", endDate);
     }
 
@@ -108,6 +108,6 @@ class IdCardServiceTest {
                 "john.doe@example.com",
                 "https://github.com/johndoe"
         );
-        assertThrows(IllegalArgumentException.class, () -> getEndDate(invalidDto));
+        assertThrows(IllegalArgumentException.class, () -> getEndDate(invalidDto.getCourse()));
     }
 }
