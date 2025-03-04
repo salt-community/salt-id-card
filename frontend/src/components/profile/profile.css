@@ -25,13 +25,14 @@
   width: 200px;
   height: 200px;
 }
-.profile > .cta {
-  padding: 15px;
+.profile__button > .cta {
+  padding: 13px;
+  margin: 0px 7px;
 }
 .profile__button--svg {
   display: flex;
   align-items: center;
-  height: 20px;
+  height: 23px;
 }
 
 @media (max-width: 410px) {
