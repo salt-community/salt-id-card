@@ -33,7 +33,6 @@ export const ProfileBody = () => {
       ) : userData ? (
         <div className="validate__section-middle__wrapper">
           <>
-            <Title content="Hello! It looks like you've found my ID card." />
             <Profile userData={userData} />
           </>
         </div>

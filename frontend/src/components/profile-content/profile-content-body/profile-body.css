@@ -6,13 +6,10 @@
   padding: 50px;
 }
 .validate__section-middle__wrapper > h1 {
-  font-size: x-large;
+  text-align: center;
+  font-size: xx-large;
   color: var(--text-primary);
 }
-.validate__section-middle__wrapper > p {
-  margin-top: 30px;
-}
-
 .validate__section-middle > .loading-container {
   height: 400px;
 }
