@@ -1,7 +1,7 @@
 import "./validate-content.css";
-import { ValidateContentTop } from "./validate-content-top";
-import { ValidateContentMiddle } from "./validate-content-middle";
-import { ValidateContentBottom } from "./validate-content-bottom";
+import { ValidateContentTop } from "./validate-content-header";
+import { ValidateContentMiddle } from "./validate-content-body";
+import { ValidateContentBottom } from "./validate-content-footer";
 
 export const ValidateContent = () => {
   return (
