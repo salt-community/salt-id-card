@@ -1,12 +1,12 @@
 import { Title } from "../../title";
 import { useEffect } from "react";
-import "./validate-content-body.css";
+import "./profile-body.css";
 import { Profile } from "../../profile";
 import { useSaltDataId } from "../../../hooks/use-salt-data-id";
 import { Loading } from "../../loading";
 import { InfoBox } from "../../info-box";
 
-export const ValidateContentBody = () => {
+export const ProfileBody = () => {
   const { userData, error, getSaltData } = useSaltDataId();
   useEffect(() => {
     getSaltData();

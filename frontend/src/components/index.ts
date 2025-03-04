@@ -9,7 +9,7 @@ export * from "./main-content";
 export * from "./log-in";
 export * from "./subtitle";
 export * from "./application-steps";
-export * from "./validate-content";
+export * from "./profile-content";
 export * from "./footer";
 export * from "./profile";
 export * from "./error-modal";
