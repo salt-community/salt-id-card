@@ -1,31 +1,32 @@
-import { CtaButton } from "../button";
+import { Button } from "../button";
 import { InfoBox } from "../info-box";
-import "./email-not-found-modal.css";
+import "./error-modal.css";
 import { SignOutButton } from "@clerk/clerk-react";
 
-type EmailNotFoundModalProps = {
+type ErrorModalProps = {
   errorMessage: string;
   onConfirm: () => Promise<void>;
 };
 
-export default function EmailNotFoundModal({
+export default function ErrorModal({
   errorMessage,
   onConfirm,
-}: EmailNotFoundModalProps) {
+}: ErrorModalProps) {
   return (
     <div className="modal-overlay">
       <div className="modal">
         <h2>Something when wrong</h2>
         <InfoBox>
-          {errorMessage}. Please speak with your instructor to verify if it is correct in Notion.
+          {errorMessage}. Please speak with your instructor to verify if it is
+          correct in Notion.
         </InfoBox>
         <div className="modal-footer">
           <SignOutButton>
-            <CtaButton variant="info">Cancel</CtaButton>
+            <Button variant="info">Cancel</Button>
           </SignOutButton>
-          <CtaButton variant="primary" onClick={() => onConfirm()}>
+          <Button variant="primary" onClick={() => onConfirm()}>
             Try again
-          </CtaButton>
+          </Button>
         </div>
       </div>
     </div>

@@ -1,13 +1,16 @@
-import {SignInButton} from "@clerk/clerk-react";
-import {InfoBox, CtaButton} from "../../../components";
-import './log-in-right.css'
+import { SignInButton } from "@clerk/clerk-react";
+import { InfoBox, Button } from "../../../components";
+import "./log-in-right.css";
 
 export const LogInRight = () => {
   return (
     <section className="logged-out__right">
-      <InfoBox>Before you sign in make sure to upload your picture to your github profile.</InfoBox>
+      <InfoBox>
+        Before you sign in make sure to upload your picture to your github
+        profile.
+      </InfoBox>
       <SignInButton>
-        <CtaButton variant="primary">Sign in</CtaButton>
+        <Button variant="primary">Sign in</Button>
       </SignInButton>
     </section>
   );

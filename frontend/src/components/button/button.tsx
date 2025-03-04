@@ -1,4 +1,4 @@
-import "./cta-button.css";
+import "./button.css";
 import React from "react";
 
 type Variant = "primary" | "secondary" | "info" | "danger" | "success";
@@ -10,7 +10,7 @@ type Props = {
   disabled?: boolean;
 };
 
-export const CtaButton = ({ onClick, children, variant, disabled}: Props) => {
+export const Button = ({ onClick, children, variant, disabled }: Props) => {
   return (
     <button className={`cta ${variant}`} onClick={onClick} disabled={disabled}>
       {children}

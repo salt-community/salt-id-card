@@ -12,5 +12,5 @@ export * from "./application-steps";
 export * from "./validate-content";
 export * from "./footer";
 export * from "./profile";
-export * from "./email-not-found-modal";
+export * from "./error-modal";
 export * from "./loading";
