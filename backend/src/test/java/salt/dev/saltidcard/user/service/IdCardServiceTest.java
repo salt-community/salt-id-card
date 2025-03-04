@@ -14,6 +14,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import static salt.dev.saltidcard.user.Utils.*;
 
 @ExtendWith(MockitoExtension.class)
 class IdCardServiceTest {
@@ -72,29 +73,29 @@ class IdCardServiceTest {
 
     @Test
     void getGitHubAvatarUrlValid() {
-        String avatarUrl = IdCardService.getGitHubAvatarUrl("https://github.com/testuser");
+        String avatarUrl = getGitHubAvatarUrl("https://github.com/testuser");
         assertEquals("https://avatars.githubusercontent.com/testuser", avatarUrl);
     }
 
     @Test
     void getGitHubAvatarUrlInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> IdCardService.getGitHubAvatarUrl("https://gitlab.com/testuser"));
+        assertThrows(IllegalArgumentException.class, () -> getGitHubAvatarUrl("https://gitlab.com/testuser"));
     }
 
     @Test
     void testIfNotEmptyReturnValid() {
-        assertEquals("test", IdCardService.ifNotEmptyReturn("test", "Error message"));
+        assertEquals("test", ifNotEmptyReturn("test", "Error message"));
     }
 
     @Test
     void testIfNotEmptyReturnInvalid() {
-        assertThrows(IllegalArgumentException.class, () -> IdCardService.ifNotEmptyReturn(null, "Error message"));
-        assertThrows(IllegalArgumentException.class, () -> IdCardService.ifNotEmptyReturn("null", "Error message"));
+        assertThrows(IllegalArgumentException.class, () -> ifNotEmptyReturn(null, "Error message"));
+        assertThrows(IllegalArgumentException.class, () -> ifNotEmptyReturn("null", "Error message"));
     }
 
     @Test
     void getEndDateValid() {
-        String endDate = IdCardService.getEndDate(mockUserDto);
+        String endDate = getEndDate(mockUserDto);
         assertEquals("2027-05-12", endDate);
     }
 
@@ -107,6 +108,6 @@ class IdCardServiceTest {
                 "john.doe@example.com",
                 "https://github.com/johndoe"
         );
-        assertThrows(IllegalArgumentException.class, () -> IdCardService.getEndDate(invalidDto));
+        assertThrows(IllegalArgumentException.class, () -> getEndDate(invalidDto));
     }
 }
