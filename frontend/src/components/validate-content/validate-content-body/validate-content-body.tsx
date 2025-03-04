@@ -1,12 +1,12 @@
 import { Title } from "../../title";
 import { useEffect } from "react";
-import "./validate-content-middle.css";
+import "./validate-content-body.css";
 import { Profile } from "../../profile";
 import { useSaltDataId } from "../../../hooks/use-salt-data-id";
 import { Loading } from "../../loading";
 import { InfoBox } from "../../info-box";
 
-export const ValidateContentMiddle = () => {
+export const ValidateContentBody = () => {
   const { userData, error, getSaltData } = useSaltDataId();
   useEffect(() => {
     getSaltData();

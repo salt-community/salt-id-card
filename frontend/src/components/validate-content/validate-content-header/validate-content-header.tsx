@@ -1,8 +1,8 @@
 import { Button } from "../../button";
 import { Logo } from "../../logo";
-import "./validate-content-top.css";
+import "./validate-content-header.css";
 
-export const ValidateContentTop = () => {
+export const ValidateContentHeader = () => {
   return (
     <section className="validate__section-top">
       <Logo />

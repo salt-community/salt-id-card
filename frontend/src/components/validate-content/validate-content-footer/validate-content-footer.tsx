@@ -1,8 +1,8 @@
 import { Button } from "../../button";
 import { Footer } from "../../footer";
-import "./validate-content-bottom.css";
+import "./validate-content-footer.css";
 
-export const ValidateContentBottom = () => {
+export const ValidateContentFooter = () => {
   return (
     <section className="validate__section-bottom">
       <Footer />

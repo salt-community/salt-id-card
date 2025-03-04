@@ -1,17 +1,17 @@
 import "./validate-content.css";
-import { ValidateContentTop } from "./validate-content-header";
-import { ValidateContentMiddle } from "./validate-content-body";
-import { ValidateContentBottom } from "./validate-content-footer";
+import { ValidateContentHeader } from "./validate-content-header";
+import { ValidateContentBody } from "./validate-content-body";
+import { ValidateContentFooter } from "./validate-content-footer";
 
 export const ValidateContent = () => {
   return (
     <>
       <div className="validate">
         <section className="validate__content">
-          <ValidateContentTop />
-          <ValidateContentMiddle />
+          <ValidateContentHeader />
+          <ValidateContentBody />
         </section>
-        <ValidateContentBottom />
+        <ValidateContentFooter />
       </div>
     </>
   );

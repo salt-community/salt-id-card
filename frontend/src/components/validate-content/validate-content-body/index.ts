@@ -1,1 +1,1 @@
-export * from "./validate-content-middle.tsx";
+export * from "./validate-content-body.tsx";
