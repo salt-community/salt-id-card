@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../app.tsx";
-import { Validate } from "../pages/validate.tsx";
+import { Profile } from "../pages/profile.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -9,8 +9,8 @@ export const router = createBrowserRouter([
     errorElement: <></>,
   },
   {
-    path: "/salt-id-card/validate",
-    element: <Validate />,
+    path: "/salt-id-card/profile",
+    element: <Profile />,
     errorElement: <></>,
   },
 ]);
