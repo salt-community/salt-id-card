@@ -14,7 +14,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static salt.dev.saltidcard.user.Utils.*;
+import static salt.dev.saltidcard.user.service.Utils.*;
 
 @ExtendWith(MockitoExtension.class)
 class IdCardServiceTest {

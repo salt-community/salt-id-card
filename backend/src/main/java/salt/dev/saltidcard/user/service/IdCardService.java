@@ -7,7 +7,8 @@ import salt.dev.saltidcard.notionproxy.dtos.UserNotionProxyDto;
 
 import java.util.UUID;
 
-import static salt.dev.saltidcard.user.Utils.*;
+import static salt.dev.saltidcard.user.service.IdCardServiceConstants.*;
+import static salt.dev.saltidcard.user.service.Utils.*;
 
 @Service
 public class IdCardService {
@@ -37,11 +38,11 @@ public class IdCardService {
 
     private static User createUserFromNotionDto(UserNotionProxyDto userDto) {
         return new User(
-                ifNotEmptyReturn(userDto.getUuid(), "Invalid uuid"),
-                ifNotEmptyReturn(userDto.getName(), "Invalid name"),
-                ifNotEmptyReturn(userDto.getCourse(), "Invalid course"),
+                ifNotEmptyReturn(userDto.getUuid(), ERROR_UUID),
+                ifNotEmptyReturn(userDto.getName(), ERROR_NAME),
+                ifNotEmptyReturn(userDto.getCourse(), ERROR_COURSE),
                 getEndDate(userDto.getCourse()),
-                ifNotEmptyReturn(userDto.getEmail(), "Invalid email"),
+                ifNotEmptyReturn(userDto.getEmail(), ERROR_EMAIL),
                 getGitHubAvatarUrl(userDto.getGitHub()));
     }
 }
